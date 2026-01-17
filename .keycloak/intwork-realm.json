@@ -1,0 +1,35 @@
+{
+  "realm": "intwork-realm",
+  "enabled": true,
+
+  "clients": [
+    {
+      "clientId": "my-backend",
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "secret": "dev-secret",
+      "redirectUris": [
+        "http://localhost:3000/*"
+      ],
+      "webOrigins": [
+        "http://localhost:3000"
+      ],
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": true
+    }
+  ],
+
+  "users": [
+    {
+      "username": "test",
+      "enabled": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "test",
+          "temporary": false
+        }
+      ]
+    }
+  ]
+}
