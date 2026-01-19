@@ -6,15 +6,14 @@ services:
       KC_BOOTSTRAP_ADMIN_USERNAME: admin
       KC_BOOTSTRAP_ADMIN_PASSWORD: admin
       KC_HTTP_ENABLED: true
-      KC_PROXY_ADDRESS_FORWARDING: true
       KC_FEATURES: preview
-    volumes:
+#    volumes:
 #      - ./.keycloak/intwork-realm.json:/opt/keycloak/data/import/intwork-realm.json:ro
-      - ./.keycloak/realm-export.json:/opt/keycloak/data/import/realm-export.json:ro
-      - keycloak-data:/opt/keycloak/data
+#      - ./.keycloak/realm-export.json:/opt/keycloak/data/import/realm-export.json:ro
+#      - keycloak-data:/opt/keycloak/data
     ports:
       - "8002:8080"
     command: ["start-dev", "--import-realm"]
 
-volumes:
-  keycloak-data: {}
+#volumes:
+#  keycloak-data: {}
