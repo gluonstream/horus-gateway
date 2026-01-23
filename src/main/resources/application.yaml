@@ -1,3 +1,8 @@
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.security.oauth2: DEBUG
+
 server:
   port: 9090
 spring:
@@ -7,7 +12,7 @@ spring:
     endpoints:
       web:
         exposure:
-          include: health
+          include: health, info, env, configprops
     endpoint:
       health:
         probes:
@@ -30,7 +35,6 @@ spring:
             redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
         provider:
           gateway-rest-api:
-            # Use the Docker service name 'keycloak' and internal port 8080
             issuer-uri: ${KEYCLOAK_ISSUER_URI:http://localhost:8002/realms/intwork}
       resourceserver:
         jwt:

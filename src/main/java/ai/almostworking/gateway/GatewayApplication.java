@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
+import org.springframework.cloud.gateway.filter.factory.TokenRelayGatewayFilterFactory;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
@@ -14,16 +15,25 @@ public class GatewayApplication {
     }
 
     @Bean
-    public RouteLocator myRoutes(RouteLocatorBuilder builder) {
+    public RouteLocator myRoutes(RouteLocatorBuilder builder, TokenRelayGatewayFilterFactory tokenRelay) {
         return builder.routes()
                 .route(p -> p.path("/hello")
-                        .filters(f -> f.tokenRelay())
+                        .filters(f -> f.filter(tokenRelay.apply())
+                                .removeRequestHeader("Cookie")
+                                .removeResponseHeader("Set-Cookie"))
                         .uri("http://localhost:8080"))
                 .route(p -> p.path("/greetings").uri("http://localhost:8080"))
-                .route(p -> p.path("/minio/**").uri("http://localhost:8080"))
+                .route(p -> p.path("/minio/**")
+                        .filters(f -> f.filter(tokenRelay.apply())
+                                .removeRequestHeader("Cookie")
+                                .removeResponseHeader("Set-Cookie"))
+                        .uri("http://localhost:8080"))
                 .route(p -> p.query("X-Amz-Signature")
                         .uri("http://localhost:9000"))
                 .route(p -> p.path("/api/**")
+                        .filters(f -> f.filter(tokenRelay.apply())
+                                .removeRequestHeader("Cookie")
+                                .removeResponseHeader("Set-Cookie"))
                         .uri("http://localhost:8081"))
                 .build();
     }
