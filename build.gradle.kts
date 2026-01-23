@@ -29,7 +29,7 @@ extra["springCloudVersion"] = "2025.1.0"
 dependencies {
     implementation("org.springframework.cloud:spring-cloud-starter-gateway-server-webflux")
     implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
-    implementation("org.springframework.cloud:spring-cloud-starter-circuitbreaker-reactor-resilience4j")
+//    implementation("org.springframework.cloud:spring-cloud-starter-circuitbreaker-reactor-resilience4j")
     implementation("org.springframework.boot:spring-boot-starter-security-oauth2-resource-server")
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")
