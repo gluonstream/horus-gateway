@@ -21,8 +21,12 @@ public class GatewayApplication {
                         .filters(f -> f.filter(tokenRelay.apply())
                                 )
                         .uri("http://localhost:8080"))
+                .route(p -> p.path("/bff/**")
+                        .filters(f -> f.filter(tokenRelay.apply()))
+                        .uri("http://localhost:8080"))
                 .route(p -> p.path("/greetings").uri("http://localhost:8080"))
                 .route(p -> p.path("/minio/**")
+
                         .filters(f -> f.filter(tokenRelay.apply())
                         )
                         .uri("http://localhost:8080"))
