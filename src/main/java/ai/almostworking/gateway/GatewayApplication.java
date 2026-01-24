@@ -17,6 +17,8 @@ public class GatewayApplication {
     @Bean
     public RouteLocator myRoutes(RouteLocatorBuilder builder, TokenRelayGatewayFilterFactory tokenRelay) {
         return builder.routes()
+//                .route(p->p.path("/")
+//                        .uri("http://localhost:5173/"))
                 .route(p -> p.path("/hello")
                         .filters(f -> f.filter(tokenRelay.apply())
                                 )

@@ -15,16 +15,13 @@ import org.springframework.security.oauth2.client.userinfo.ReactiveOAuth2UserSer
 import org.springframework.security.oauth2.core.oidc.user.DefaultOidcUser;
 import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.security.oauth2.jwt.ReactiveJwtDecoder;
-import org.springframework.security.oauth2.jwt.ReactiveJwtDecoders;
 import org.springframework.security.oauth2.server.resource.authentication.ReactiveJwtAuthenticationConverter;
-import org.springframework.security.web.server.context.NoOpServerSecurityContextRepository;
-import org.springframework.security.web.server.context.WebSessionServerSecurityContextRepository;
 import org.springframework.security.web.server.SecurityWebFilterChain;
+import org.springframework.security.web.server.authentication.RedirectServerAuthenticationSuccessHandler;
 import org.springframework.security.web.server.authentication.logout.DelegatingServerLogoutHandler;
 import org.springframework.security.web.server.authentication.logout.SecurityContextServerLogoutHandler;
 import org.springframework.security.web.server.authentication.logout.WebSessionServerLogoutHandler;
-import org.springframework.security.web.server.csrf.CookieServerCsrfTokenRepository;
-import org.springframework.security.web.server.header.XFrameOptionsServerHttpHeadersWriter;
+import org.springframework.security.web.server.context.WebSessionServerSecurityContextRepository;
 import org.springframework.web.server.session.CookieWebSessionIdResolver;
 import org.springframework.web.server.session.WebSessionIdResolver;
 import reactor.core.publisher.Flux;
@@ -46,11 +43,17 @@ public class GatewaySecConfig {
         return http
                 .securityContextRepository(new WebSessionServerSecurityContextRepository())
                 .authorizeExchange(exchange -> exchange
-                                .pathMatchers("/greetings").permitAll()
-                                .pathMatchers("/hello").hasAnyRole("manage-account", "view-profile")
-                                .anyExchange().authenticated()
+                        .pathMatchers("/").permitAll()
+                        .pathMatchers("/greetings").permitAll()
+                        .pathMatchers("/hello").hasAnyRole("manage-account", "view-profile")
+                        .anyExchange().authenticated()
                 )
-                .oauth2Login(Customizer.withDefaults())
+//                .oauth2Login(Customizer.withDefaults())
+                .oauth2Login(oauth2 -> oauth2
+                        .authenticationSuccessHandler(
+                                new RedirectServerAuthenticationSuccessHandler("http://localhost:5173/")
+                        )
+                )
                 .logout(logout -> logout
                         .logoutHandler(new DelegatingServerLogoutHandler(
                                 new WebSessionServerLogoutHandler(),
@@ -140,7 +143,6 @@ public class GatewaySecConfig {
                             });
                 });
     }
-
 
 
     // this Bean is for Microservices wanting to go through this Gateway
