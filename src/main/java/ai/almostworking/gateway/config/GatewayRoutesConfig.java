@@ -10,14 +10,14 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class GatewayRoutesConfig {
 
-    @Value("${beminio.url}")
+    @Value("${be.minio.url}")
     private String beMinio;
 
     @Value("${api.url}")
     private String apiUrl;
 
-    @Value("${storage.url}")
-    private String storageUrl;
+    @Value("${be.storage.url}")
+    private String minioStorageUrl;
 
     @Bean
     public RouteLocator myRoutes(RouteLocatorBuilder builder, TokenRelayGatewayFilterFactory tokenRelay) {
@@ -34,7 +34,7 @@ public class GatewayRoutesConfig {
                         .filters(f -> f.filter(tokenRelay.apply()))
                         .uri(beMinio))
                 .route("storage-signature", p -> p.query("X-Amz-Signature")
-                        .uri(storageUrl))
+                        .uri(minioStorageUrl))
                 .route("api-all", p -> p.path("/api/**")
                         .filters(f -> f.filter(tokenRelay.apply()))
                         .uri(apiUrl))

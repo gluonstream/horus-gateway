@@ -40,11 +40,14 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: ${KEYCLOAK_ISSUER_URI:http://localhost:8002/realms/intwork}
-beminio:
-  url: http://localhost:8080
+be:
+  minio:
+    url: http://localhost:8080
+  storage:
+    url: http://localhost:9000
 api:
   url: http://localhost:8081
-storage:
-  url: http://localhost:9000
+
+
 
 
