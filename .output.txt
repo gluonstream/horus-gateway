@@ -1,258 +1,244 @@
-./k8s/deployment.yaml:          value: "http://keycloak.keycloak-namespace.svc.cluster.local:8080/realms/intwork"
-./k8s/deployment.yaml:          value: "http://be-minio.be-minio.svc.cluster.local:8080"
-./k8s/deployment.yaml:          value: "http://minio.be-minio.svc.cluster.local:9000"
-./k8s/deployment.yaml:          value: "http://api.be-minio.svc.cluster.local:8081"
-./k8s/deployment.yaml:          httpGet:
-./k8s/deployment.yaml:          httpGet:
-./README.md:Docker exposes it on http://localhost:8001
-./README.md:- Keycloak: http://localhost:8001
-./README.md:- Admin Console: http://localhost:8001/admin
-./README.md:- Health Check: http://localhost:8001/health/live
-./gradle/wrapper/gradle-wrapper.properties:distributionUrl=https\://services.gradle.org/distributions/gradle-9.2.1-bin.zip
-./gradlew:#      https://www.apache.org/licenses/LICENSE-2.0
-./gradlew:#       https://github.com/gradle/gradle/blob/HEAD/platforms/jvm/plugins-application/src/main/resources/org/gradle/api/internal/plugins/unixStartScript.txt
-./gradlew:#       You can find Gradle at https://github.com/gradle/gradle/.
-./gradlew:# Discard cd standard output in case $CDPATH is set (https://github.com/gradle/gradle/issues/25036)
-Binary file ./.gradle/9.2.1/executionHistory/executionHistory.bin matches
-Binary file ./build/classes/java/main/ai/almostworking/gateway/config/GatewaySecConfig.class matches
-./build/resources/main/postman/local.postman_collection.json:    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-./build/resources/main/postman/local.postman_collection.json:    "_collection_link": "https://go.postman.co/collection/1446308-8b8c17ee-6125-491a-ac23-747cee1665a6?source=collection_link"
-./build/resources/main/postman/local.postman_collection.json:                  "value": "http://localhost:8002/realms/intwork/protocol/openid-connect/token",
-./build/resources/main/postman/local.postman_collection.json:                  "value": "http://localhost:8002/realms/intwork/protocol/openid-connect/auth",
-./build/resources/main/postman/local.postman_collection.json:                  "value": "http://localhost:9090/hello",
-./build/resources/main/postman/local.postman_collection.json:              "raw": "http://localhost:9090/hello",
-./build/resources/main/postman/local.postman_collection.json:              "protocol": "http",
-./build/resources/main/postman/local.postman_collection.json:              "raw": "http://localhost:9090/hello",
-./build/resources/main/postman/local.postman_collection.json:              "protocol": "http",
-./build/resources/main/postman/local.postman_collection.json:              "raw": "http://localhost:9090/minio/{{bucker_name}}/link/PT10M/non blocking the way.mp3",
-./build/resources/main/postman/local.postman_collection.json:              "protocol": "http",
-./build/resources/main/postman/local.postman_collection.json:              "raw": "http://localhost:9090/minio/stefan/link/PT10M/non blocking the way.mp3",
-./build/resources/main/postman/local.postman_collection.json:              "protocol": "http",
-./build/resources/main/postman/local.postman_collection.json:              "raw": "http://localhost:9090/minio/gateway",
-./build/resources/main/postman/local.postman_collection.json:              "protocol": "http",
-./build/resources/main/postman/local.postman_collection.json:              "raw": "http://localhost:9090/minio/{{bucker_name}}/upload",
-./build/resources/main/postman/local.postman_collection.json:              "protocol": "http",
-./build/resources/main/application.yaml:            issuer-uri: ${KEYCLOAK_ISSUER_URI:http://localhost:8002/realms/intwork}
-./build/resources/main/application.yaml:          issuer-uri: ${KEYCLOAK_ISSUER_URI:http://localhost:8002/realms/intwork}
-./build/resources/main/application.yaml:    url: ${BE_MINIO_URL:http://localhost:8080}
-./build/resources/main/application.yaml:    url: ${BE_STORAGE_URL:http://localhost:9000}
-./build/resources/main/application.yaml:  url: ${API_URL:http://localhost:8081}
-Binary file ./build/libs/gateway-0.0.1-SNAPSHOT.jar matches
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    <failure message="java.lang.IllegalStateException: Failed to load ApplicationContext for [ReactiveWebMergedContextConfiguration@65262308 testClass = ai.almostworking.gateway.GatewayApplicationTests, locations = [], classes = [ai.almostworking.gateway.GatewayApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceDescriptors = [], propertySourceProperties = [&quot;org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true&quot;], contextCustomizers = [org.springframework.boot.test.autoconfigure.OnFailureConditionReportContextCustomizerFactory$OnFailureConditionReportContextCustomizer@b09fac1, org.springframework.boot.test.context.PropertyMappingContextCustomizer@0, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@22fa55b2, org.springframework.boot.test.http.client.DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory$DisableReactorResourceFactoryGlobalResourcesContextCustomizerCustomizer@6b530eb9, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@17f460bb, org.springframework.boot.web.server.context.SpringBootTestRandomPortContextCustomizerFactory$Customizer@18ca3c62, org.springframework.test.context.support.DynamicPropertiesContextCustomizer@0, org.springframework.boot.test.context.SpringBootTestAnnotation@ee5e7689], contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]" type="java.lang.IllegalStateException">java.lang.IllegalStateException: Failed to load ApplicationContext for [ReactiveWebMergedContextConfiguration@65262308 testClass = ai.almostworking.gateway.GatewayApplicationTests, locations = [], classes = [ai.almostworking.gateway.GatewayApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceDescriptors = [], propertySourceProperties = [&quot;org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true&quot;], contextCustomizers = [org.springframework.boot.test.autoconfigure.OnFailureConditionReportContextCustomizerFactory$OnFailureConditionReportContextCustomizer@b09fac1, org.springframework.boot.test.context.PropertyMappingContextCustomizer@0, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@22fa55b2, org.springframework.boot.test.http.client.DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory$DisableReactorResourceFactoryGlobalResourcesContextCustomizerCustomizer@6b530eb9, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@17f460bb, org.springframework.boot.web.server.context.SpringBootTestRandomPortContextCustomizerFactory$Customizer@18ca3c62, org.springframework.test.context.support.DynamicPropertiesContextCustomizer@0, org.springframework.boot.test.context.SpringBootTestAnnotation@ee5e7689], contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveOAuth2AuthorizedClientManager': Failed to instantiate [org.springframework.security.oauth2.client.ReactiveOAuth2AuthorizedClientManager]: Factory method 'getAuthorizedClientManager' threw exception with message: Error creating bean with name 'reactiveClientRegistrationRepository' defined in class path resource [org/springframework/boot/security/oauth2/client/autoconfigure/reactive/ReactiveOAuth2ClientConfigurations$ReactiveClientRegistrationRepositoryConfiguration.class]: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryReactiveClientRegistrationRepository]: Factory method 'reactiveClientRegistrationRepository' threw exception with message: Unable to resolve Configuration with the provided Issuer of &quot;http://localhost:8002/realms/intwork&quot;
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.oauth2.client.ReactiveOAuth2AuthorizedClientManager]: Factory method 'getAuthorizedClientManager' threw exception with message: Error creating bean with name 'reactiveClientRegistrationRepository' defined in class path resource [org/springframework/boot/security/oauth2/client/autoconfigure/reactive/ReactiveOAuth2ClientConfigurations$ReactiveClientRegistrationRepositoryConfiguration.class]: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryReactiveClientRegistrationRepository]: Factory method 'reactiveClientRegistrationRepository' threw exception with message: Unable to resolve Configuration with the provided Issuer of &quot;http://localhost:8002/realms/intwork&quot;
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveClientRegistrationRepository' defined in class path resource [org/springframework/boot/security/oauth2/client/autoconfigure/reactive/ReactiveOAuth2ClientConfigurations$ReactiveClientRegistrationRepositoryConfiguration.class]: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryReactiveClientRegistrationRepository]: Factory method 'reactiveClientRegistrationRepository' threw exception with message: Unable to resolve Configuration with the provided Issuer of &quot;http://localhost:8002/realms/intwork&quot;
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryReactiveClientRegistrationRepository]: Factory method 'reactiveClientRegistrationRepository' threw exception with message: Unable to resolve Configuration with the provided Issuer of &quot;http://localhost:8002/realms/intwork&quot;
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:Caused by: java.lang.IllegalArgumentException: Unable to resolve Configuration with the provided Issuer of &quot;http://localhost:8002/realms/intwork&quot;
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:Caused by: org.springframework.web.client.ResourceAccessException: I/O error on GET request for &quot;http://localhost:8002/realms/intwork/.well-known/openid-configuration&quot;: Connection refused
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:516)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:604)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at java.base/sun.net.www.http.HttpClient.&lt;init&gt;(HttpClient.java:276)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:380)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:393)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1030)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:963)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:899)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:872)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at org.springframework.http.client.SimpleClientHttpRequest.executeInternal(SimpleClientHttpRequest.java:80)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:87)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveOAuth2AuthorizedClientManager': Failed to instantiate [org.springframework.security.oauth2.client.ReactiveOAuth2AuthorizedClientManager]: Factory method 'getAuthorizedClientManager' threw exception with message: Error creating bean with name 'reactiveClientRegistrationRepository' defined in class path resource [org/springframework/boot/security/oauth2/client/autoconfigure/reactive/ReactiveOAuth2ClientConfigurations$ReactiveClientRegistrationRepositoryConfiguration.class]: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryReactiveClientRegistrationRepository]: Factory method 'reactiveClientRegistrationRepository' threw exception with message: Unable to resolve Configuration with the provided Issuer of "http://localhost:8002/realms/intwork"
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.oauth2.client.ReactiveOAuth2AuthorizedClientManager]: Factory method 'getAuthorizedClientManager' threw exception with message: Error creating bean with name 'reactiveClientRegistrationRepository' defined in class path resource [org/springframework/boot/security/oauth2/client/autoconfigure/reactive/ReactiveOAuth2ClientConfigurations$ReactiveClientRegistrationRepositoryConfiguration.class]: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryReactiveClientRegistrationRepository]: Factory method 'reactiveClientRegistrationRepository' threw exception with message: Unable to resolve Configuration with the provided Issuer of "http://localhost:8002/realms/intwork"
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveClientRegistrationRepository' defined in class path resource [org/springframework/boot/security/oauth2/client/autoconfigure/reactive/ReactiveOAuth2ClientConfigurations$ReactiveClientRegistrationRepositoryConfiguration.class]: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryReactiveClientRegistrationRepository]: Factory method 'reactiveClientRegistrationRepository' threw exception with message: Unable to resolve Configuration with the provided Issuer of "http://localhost:8002/realms/intwork"
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryReactiveClientRegistrationRepository]: Factory method 'reactiveClientRegistrationRepository' threw exception with message: Unable to resolve Configuration with the provided Issuer of "http://localhost:8002/realms/intwork"
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:Caused by: java.lang.IllegalArgumentException: Unable to resolve Configuration with the provided Issuer of "http://localhost:8002/realms/intwork"
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:Caused by: org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8002/realms/intwork/.well-known/openid-configuration": Connection refused
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:516) ~[na:na]
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:604) ~[na:na]
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:276) ~[na:na]
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:380) ~[na:na]
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:393) ~[na:na]
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1030) ~[na:na]
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:963) ~[na:na]
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:899) ~[na:na]
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:872) ~[na:na]
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at org.springframework.http.client.SimpleClientHttpRequest.executeInternal(SimpleClientHttpRequest.java:80) ~[spring-web-7.0.2.jar:7.0.2]
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:87) ~[spring-web-7.0.2.jar:7.0.2]
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80) ~[spring-web-7.0.2.jar:7.0.2]
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:java.lang.IllegalStateException: Failed to load ApplicationContext for [ReactiveWebMergedContextConfiguration@65262308 testClass = ai.almostworking.gateway.GatewayApplicationTests, locations = [], classes = [ai.almostworking.gateway.GatewayApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceDescriptors = [], propertySourceProperties = ["org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true"], contextCustomizers = [org.springframework.boot.test.autoconfigure.OnFailureConditionReportContextCustomizerFactory$OnFailureConditionReportContextCustomizer@b09fac1, org.springframework.boot.test.context.PropertyMappingContextCustomizer@0, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@22fa55b2, org.springframework.boot.test.http.client.DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory$DisableReactorResourceFactoryGlobalResourcesContextCustomizerCustomizer@6b530eb9, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@17f460bb, org.springframework.boot.web.server.context.SpringBootTestRandomPortContextCustomizerFactory$Customizer@18ca3c62, org.springframework.test.context.support.DynamicPropertiesContextCustomizer@0, org.springframework.boot.test.context.SpringBootTestAnnotation@ee5e7689], contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveOAuth2AuthorizedClientManager': Failed to instantiate [org.springframework.security.oauth2.client.ReactiveOAuth2AuthorizedClientManager]: Factory method 'getAuthorizedClientManager' threw exception with message: Error creating bean with name 'reactiveClientRegistrationRepository' defined in class path resource [org/springframework/boot/security/oauth2/client/autoconfigure/reactive/ReactiveOAuth2ClientConfigurations$ReactiveClientRegistrationRepositoryConfiguration.class]: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryReactiveClientRegistrationRepository]: Factory method 'reactiveClientRegistrationRepository' threw exception with message: Unable to resolve Configuration with the provided Issuer of "http://localhost:8002/realms/intwork"
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.oauth2.client.ReactiveOAuth2AuthorizedClientManager]: Factory method 'getAuthorizedClientManager' threw exception with message: Error creating bean with name 'reactiveClientRegistrationRepository' defined in class path resource [org/springframework/boot/security/oauth2/client/autoconfigure/reactive/ReactiveOAuth2ClientConfigurations$ReactiveClientRegistrationRepositoryConfiguration.class]: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryReactiveClientRegistrationRepository]: Factory method 'reactiveClientRegistrationRepository' threw exception with message: Unable to resolve Configuration with the provided Issuer of "http://localhost:8002/realms/intwork"
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveClientRegistrationRepository' defined in class path resource [org/springframework/boot/security/oauth2/client/autoconfigure/reactive/ReactiveOAuth2ClientConfigurations$ReactiveClientRegistrationRepositoryConfiguration.class]: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryReactiveClientRegistrationRepository]: Factory method 'reactiveClientRegistrationRepository' threw exception with message: Unable to resolve Configuration with the provided Issuer of "http://localhost:8002/realms/intwork"
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryReactiveClientRegistrationRepository]: Factory method 'reactiveClientRegistrationRepository' threw exception with message: Unable to resolve Configuration with the provided Issuer of "http://localhost:8002/realms/intwork"
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:Caused by: java.lang.IllegalArgumentException: Unable to resolve Configuration with the provided Issuer of "http://localhost:8002/realms/intwork"
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:Caused by: org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8002/realms/intwork/.well-known/openid-configuration": Connection refused
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:516) ~[na:na]
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:604) ~[na:na]
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:276) ~[na:na]
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:380) ~[na:na]
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:393) ~[na:na]
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1030) ~[na:na]
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:963) ~[na:na]
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:899) ~[na:na]
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:872) ~[na:na]
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at org.springframework.http.client.SimpleClientHttpRequest.executeInternal(SimpleClientHttpRequest.java:80) ~[spring-web-7.0.2.jar:7.0.2]
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:87) ~[spring-web-7.0.2.jar:7.0.2]
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:    at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80) ~[spring-web-7.0.2.jar:7.0.2]
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:      - @ConditionalOnClass found required classes 'org.springframework.http.codec.CodecConfigurer', 'org.springframework.web.reactive.function.client.WebClient' (OnClassCondition)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:      - @ConditionalOnProperty (spring.http.codecs.preferred-json-mapper=jackson) matched (OnPropertyCondition)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:      - @ConditionalOnProperty (server.http2.enabled) matched (OnPropertyCondition)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:      - @ConditionalOnProperty (server.http2.enabled) matched (OnPropertyCondition)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:      - @ConditionalOnClass found required classes 'reactor.netty.http.client.HttpClient', 'org.springframework.boot.reactor.netty.autoconfigure.NettyServerProperties' (OnClassCondition)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:      - @ConditionalOnMissingBean (types: reactor.netty.http.client.HttpClient,org.springframework.cloud.gateway.config.HttpClientFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:      - @ConditionalOnClass found required classes 'org.springframework.web.reactive.DispatcherHandler', 'org.springframework.http.server.reactive.HttpHandler' (OnClassCondition)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:      - @ConditionalOnMissingBean (types: org.springframework.http.server.reactive.HttpHandler; SearchStrategy: all) did not find any beans (OnBeanCondition)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:      - @ConditionalOnClass found required class 'org.springframework.http.ProblemDetail' (OnClassCondition)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:      - @ConditionalOnClass found required classes 'org.springframework.http.ReactiveHttpInputMessage', 'reactor.netty.http.server.HttpServer' (OnClassCondition)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:      - @ConditionalOnClass found required classes 'org.springframework.http.codec.multipart.DefaultPartHttpMessageReader', 'org.springframework.web.reactive.config.WebFluxConfigurer' (OnClassCondition)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:      - @ConditionalOnMissingBean (types: org.springframework.http.client.ReactorResourceFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:      - @ConditionalOnClass found required classes 'org.springframework.web.reactive.DispatcherHandler', 'org.springframework.http.server.reactive.HttpHandler' (OnClassCondition)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:      - @ConditionalOnMissingBean (types: org.springframework.http.server.reactive.observation.ServerRequestObservationConvention; SearchStrategy: all) did not find any beans (OnBeanCondition)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:         - @ConditionalOnProperty (spring.cloud.circuitbreaker.http-services.enabled=true) matched (OnPropertyCondition)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:         - @ConditionalOnProperty (spring.cloud.circuitbreaker.reactive-http-services.enabled=true) matched (OnPropertyCondition)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:         - @ConditionalOnProperty (spring.cloud.gateway.server.webflux.httpserver.wiretap) did not find property 'spring.cloud.gateway.server.webflux.httpserver.wiretap' (OnPropertyCondition)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:         - @ConditionalOnClass did not find required class 'org.springframework.boot.http.client.autoconfigure.service.HttpServiceClientProperties' (OnClassCondition)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:         - @ConditionalOnClass did not find required class 'org.springframework.boot.http.client.autoconfigure.service.HttpServiceClientProperties' (OnClassCondition)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:         - @ConditionalOnClass found required classes 'reactor.netty.http.server.HttpServer', 'org.springframework.boot.actuate.autoconfigure.web.server.ManagementContextFactory' (OnClassCondition)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:         - @ConditionalOnClass found required classes 'org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer', 'org.springframework.security.config.http.SessionCreationPolicy' (OnClassCondition)
-./build/test-results/test/TEST-ai.almostworking.gateway.GatewayApplicationTests.xml:         - @ConditionalOnBooleanProperty (management.httpexchanges.recording.enabled=true) matched (OnPropertyCondition)
-Binary file ./build/test-results/test/binary/results.bin matches
-Binary file ./build/test-results/test/binary/output.bin matches
-Binary file ./build/tmp/compileJava/previous-compilation-data.bin matches
-Binary file ./build/tmp/compileTestJava/previous-compilation-data.bin matches
-./build/reports/tests/test/index.html:<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-./build/reports/tests/test/index.html:<meta http-equiv="x-ua-compatible" content="IE=edge"/>
-./build/reports/tests/test/index.html:<a href="https://www.gradle.org">Gradle 9.2.1</a> at Feb 3, 2026, 10:36:46 PM</p>
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:<meta http-equiv="x-ua-compatible" content="IE=edge"/>
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:<pre id="test-message-contextLoads()">java.lang.IllegalStateException: Failed to load ApplicationContext for [ReactiveWebMergedContextConfiguration@65262308 testClass = ai.almostworking.gateway.GatewayApplicationTests, locations = [], classes = [ai.almostworking.gateway.GatewayApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceDescriptors = [], propertySourceProperties = [&quot;org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true&quot;], contextCustomizers = [org.springframework.boot.test.autoconfigure.OnFailureConditionReportContextCustomizerFactory$OnFailureConditionReportContextCustomizer@b09fac1, org.springframework.boot.test.context.PropertyMappingContextCustomizer@0, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@22fa55b2, org.springframework.boot.test.http.client.DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory$DisableReactorResourceFactoryGlobalResourcesContextCustomizerCustomizer@6b530eb9, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@17f460bb, org.springframework.boot.web.server.context.SpringBootTestRandomPortContextCustomizerFactory$Customizer@18ca3c62, org.springframework.test.context.support.DynamicPropertiesContextCustomizer@0, org.springframework.boot.test.context.SpringBootTestAnnotation@ee5e7689], contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveOAuth2AuthorizedClientManager': Failed to instantiate [org.springframework.security.oauth2.client.ReactiveOAuth2AuthorizedClientManager]: Factory method 'getAuthorizedClientManager' threw exception with message: Error creating bean with name 'reactiveClientRegistrationRepository' defined in class path resource [org/springframework/boot/security/oauth2/client/autoconfigure/reactive/ReactiveOAuth2ClientConfigurations$ReactiveClientRegistrationRepositoryConfiguration.class]: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryReactiveClientRegistrationRepository]: Factory method 'reactiveClientRegistrationRepository' threw exception with message: Unable to resolve Configuration with the provided Issuer of &quot;http://localhost:8002/realms/intwork&quot;
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.oauth2.client.ReactiveOAuth2AuthorizedClientManager]: Factory method 'getAuthorizedClientManager' threw exception with message: Error creating bean with name 'reactiveClientRegistrationRepository' defined in class path resource [org/springframework/boot/security/oauth2/client/autoconfigure/reactive/ReactiveOAuth2ClientConfigurations$ReactiveClientRegistrationRepositoryConfiguration.class]: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryReactiveClientRegistrationRepository]: Factory method 'reactiveClientRegistrationRepository' threw exception with message: Unable to resolve Configuration with the provided Issuer of &quot;http://localhost:8002/realms/intwork&quot;
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveClientRegistrationRepository' defined in class path resource [org/springframework/boot/security/oauth2/client/autoconfigure/reactive/ReactiveOAuth2ClientConfigurations$ReactiveClientRegistrationRepositoryConfiguration.class]: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryReactiveClientRegistrationRepository]: Factory method 'reactiveClientRegistrationRepository' threw exception with message: Unable to resolve Configuration with the provided Issuer of &quot;http://localhost:8002/realms/intwork&quot;
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryReactiveClientRegistrationRepository]: Factory method 'reactiveClientRegistrationRepository' threw exception with message: Unable to resolve Configuration with the provided Issuer of &quot;http://localhost:8002/realms/intwork&quot;
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:Caused by: java.lang.IllegalArgumentException: Unable to resolve Configuration with the provided Issuer of &quot;http://localhost:8002/realms/intwork&quot;
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:Caused by: org.springframework.web.client.ResourceAccessException: I/O error on GET request for &quot;http://localhost:8002/realms/intwork/.well-known/openid-configuration&quot;: Connection refused
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:516)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:604)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at java.base/sun.net.www.http.HttpClient.&lt;init&gt;(HttpClient.java:276)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:380)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:393)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1030)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:963)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:899)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:872)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at org.springframework.http.client.SimpleClientHttpRequest.executeInternal(SimpleClientHttpRequest.java:80)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:87)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveOAuth2AuthorizedClientManager': Failed to instantiate [org.springframework.security.oauth2.client.ReactiveOAuth2AuthorizedClientManager]: Factory method 'getAuthorizedClientManager' threw exception with message: Error creating bean with name 'reactiveClientRegistrationRepository' defined in class path resource [org/springframework/boot/security/oauth2/client/autoconfigure/reactive/ReactiveOAuth2ClientConfigurations$ReactiveClientRegistrationRepositoryConfiguration.class]: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryReactiveClientRegistrationRepository]: Factory method 'reactiveClientRegistrationRepository' threw exception with message: Unable to resolve Configuration with the provided Issuer of &quot;http://localhost:8002/realms/intwork&quot;
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.oauth2.client.ReactiveOAuth2AuthorizedClientManager]: Factory method 'getAuthorizedClientManager' threw exception with message: Error creating bean with name 'reactiveClientRegistrationRepository' defined in class path resource [org/springframework/boot/security/oauth2/client/autoconfigure/reactive/ReactiveOAuth2ClientConfigurations$ReactiveClientRegistrationRepositoryConfiguration.class]: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryReactiveClientRegistrationRepository]: Factory method 'reactiveClientRegistrationRepository' threw exception with message: Unable to resolve Configuration with the provided Issuer of &quot;http://localhost:8002/realms/intwork&quot;
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveClientRegistrationRepository' defined in class path resource [org/springframework/boot/security/oauth2/client/autoconfigure/reactive/ReactiveOAuth2ClientConfigurations$ReactiveClientRegistrationRepositoryConfiguration.class]: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryReactiveClientRegistrationRepository]: Factory method 'reactiveClientRegistrationRepository' threw exception with message: Unable to resolve Configuration with the provided Issuer of &quot;http://localhost:8002/realms/intwork&quot;
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryReactiveClientRegistrationRepository]: Factory method 'reactiveClientRegistrationRepository' threw exception with message: Unable to resolve Configuration with the provided Issuer of &quot;http://localhost:8002/realms/intwork&quot;
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:Caused by: java.lang.IllegalArgumentException: Unable to resolve Configuration with the provided Issuer of &quot;http://localhost:8002/realms/intwork&quot;
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:Caused by: org.springframework.web.client.ResourceAccessException: I/O error on GET request for &quot;http://localhost:8002/realms/intwork/.well-known/openid-configuration&quot;: Connection refused
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:516) ~[na:na]
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:604) ~[na:na]
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at java.base/sun.net.www.http.HttpClient.&lt;init&gt;(HttpClient.java:276) ~[na:na]
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:380) ~[na:na]
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:393) ~[na:na]
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1030) ~[na:na]
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:963) ~[na:na]
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:899) ~[na:na]
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:872) ~[na:na]
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at org.springframework.http.client.SimpleClientHttpRequest.executeInternal(SimpleClientHttpRequest.java:80) ~[spring-web-7.0.2.jar:7.0.2]
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:87) ~[spring-web-7.0.2.jar:7.0.2]
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80) ~[spring-web-7.0.2.jar:7.0.2]
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:java.lang.IllegalStateException: Failed to load ApplicationContext for [ReactiveWebMergedContextConfiguration@65262308 testClass = ai.almostworking.gateway.GatewayApplicationTests, locations = [], classes = [ai.almostworking.gateway.GatewayApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceDescriptors = [], propertySourceProperties = [&quot;org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true&quot;], contextCustomizers = [org.springframework.boot.test.autoconfigure.OnFailureConditionReportContextCustomizerFactory$OnFailureConditionReportContextCustomizer@b09fac1, org.springframework.boot.test.context.PropertyMappingContextCustomizer@0, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@22fa55b2, org.springframework.boot.test.http.client.DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory$DisableReactorResourceFactoryGlobalResourcesContextCustomizerCustomizer@6b530eb9, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@17f460bb, org.springframework.boot.web.server.context.SpringBootTestRandomPortContextCustomizerFactory$Customizer@18ca3c62, org.springframework.test.context.support.DynamicPropertiesContextCustomizer@0, org.springframework.boot.test.context.SpringBootTestAnnotation@ee5e7689], contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveOAuth2AuthorizedClientManager': Failed to instantiate [org.springframework.security.oauth2.client.ReactiveOAuth2AuthorizedClientManager]: Factory method 'getAuthorizedClientManager' threw exception with message: Error creating bean with name 'reactiveClientRegistrationRepository' defined in class path resource [org/springframework/boot/security/oauth2/client/autoconfigure/reactive/ReactiveOAuth2ClientConfigurations$ReactiveClientRegistrationRepositoryConfiguration.class]: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryReactiveClientRegistrationRepository]: Factory method 'reactiveClientRegistrationRepository' threw exception with message: Unable to resolve Configuration with the provided Issuer of &quot;http://localhost:8002/realms/intwork&quot;
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.oauth2.client.ReactiveOAuth2AuthorizedClientManager]: Factory method 'getAuthorizedClientManager' threw exception with message: Error creating bean with name 'reactiveClientRegistrationRepository' defined in class path resource [org/springframework/boot/security/oauth2/client/autoconfigure/reactive/ReactiveOAuth2ClientConfigurations$ReactiveClientRegistrationRepositoryConfiguration.class]: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryReactiveClientRegistrationRepository]: Factory method 'reactiveClientRegistrationRepository' threw exception with message: Unable to resolve Configuration with the provided Issuer of &quot;http://localhost:8002/realms/intwork&quot;
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveClientRegistrationRepository' defined in class path resource [org/springframework/boot/security/oauth2/client/autoconfigure/reactive/ReactiveOAuth2ClientConfigurations$ReactiveClientRegistrationRepositoryConfiguration.class]: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryReactiveClientRegistrationRepository]: Factory method 'reactiveClientRegistrationRepository' threw exception with message: Unable to resolve Configuration with the provided Issuer of &quot;http://localhost:8002/realms/intwork&quot;
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryReactiveClientRegistrationRepository]: Factory method 'reactiveClientRegistrationRepository' threw exception with message: Unable to resolve Configuration with the provided Issuer of &quot;http://localhost:8002/realms/intwork&quot;
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:Caused by: java.lang.IllegalArgumentException: Unable to resolve Configuration with the provided Issuer of &quot;http://localhost:8002/realms/intwork&quot;
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:Caused by: org.springframework.web.client.ResourceAccessException: I/O error on GET request for &quot;http://localhost:8002/realms/intwork/.well-known/openid-configuration&quot;: Connection refused
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:516) ~[na:na]
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:604) ~[na:na]
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at java.base/sun.net.www.http.HttpClient.&lt;init&gt;(HttpClient.java:276) ~[na:na]
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:380) ~[na:na]
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:393) ~[na:na]
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1030) ~[na:na]
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:963) ~[na:na]
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:899) ~[na:na]
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:872) ~[na:na]
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at org.springframework.http.client.SimpleClientHttpRequest.executeInternal(SimpleClientHttpRequest.java:80) ~[spring-web-7.0.2.jar:7.0.2]
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:87) ~[spring-web-7.0.2.jar:7.0.2]
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:       at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80) ~[spring-web-7.0.2.jar:7.0.2]
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:      - @ConditionalOnClass found required classes 'org.springframework.http.codec.CodecConfigurer', 'org.springframework.web.reactive.function.client.WebClient' (OnClassCondition)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:      - @ConditionalOnProperty (spring.http.codecs.preferred-json-mapper=jackson) matched (OnPropertyCondition)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:      - @ConditionalOnProperty (server.http2.enabled) matched (OnPropertyCondition)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:      - @ConditionalOnProperty (server.http2.enabled) matched (OnPropertyCondition)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:      - @ConditionalOnClass found required classes 'reactor.netty.http.client.HttpClient', 'org.springframework.boot.reactor.netty.autoconfigure.NettyServerProperties' (OnClassCondition)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:      - @ConditionalOnMissingBean (types: reactor.netty.http.client.HttpClient,org.springframework.cloud.gateway.config.HttpClientFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:      - @ConditionalOnClass found required classes 'org.springframework.web.reactive.DispatcherHandler', 'org.springframework.http.server.reactive.HttpHandler' (OnClassCondition)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:      - @ConditionalOnMissingBean (types: org.springframework.http.server.reactive.HttpHandler; SearchStrategy: all) did not find any beans (OnBeanCondition)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:      - @ConditionalOnClass found required class 'org.springframework.http.ProblemDetail' (OnClassCondition)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:      - @ConditionalOnClass found required classes 'org.springframework.http.ReactiveHttpInputMessage', 'reactor.netty.http.server.HttpServer' (OnClassCondition)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:      - @ConditionalOnClass found required classes 'org.springframework.http.codec.multipart.DefaultPartHttpMessageReader', 'org.springframework.web.reactive.config.WebFluxConfigurer' (OnClassCondition)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:      - @ConditionalOnMissingBean (types: org.springframework.http.client.ReactorResourceFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:      - @ConditionalOnClass found required classes 'org.springframework.web.reactive.DispatcherHandler', 'org.springframework.http.server.reactive.HttpHandler' (OnClassCondition)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:      - @ConditionalOnMissingBean (types: org.springframework.http.server.reactive.observation.ServerRequestObservationConvention; SearchStrategy: all) did not find any beans (OnBeanCondition)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:         - @ConditionalOnProperty (spring.cloud.circuitbreaker.http-services.enabled=true) matched (OnPropertyCondition)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:         - @ConditionalOnProperty (spring.cloud.circuitbreaker.reactive-http-services.enabled=true) matched (OnPropertyCondition)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:         - @ConditionalOnProperty (spring.cloud.gateway.server.webflux.httpserver.wiretap) did not find property 'spring.cloud.gateway.server.webflux.httpserver.wiretap' (OnPropertyCondition)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:         - @ConditionalOnClass did not find required class 'org.springframework.boot.http.client.autoconfigure.service.HttpServiceClientProperties' (OnClassCondition)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:         - @ConditionalOnClass did not find required class 'org.springframework.boot.http.client.autoconfigure.service.HttpServiceClientProperties' (OnClassCondition)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:         - @ConditionalOnClass found required classes 'reactor.netty.http.server.HttpServer', 'org.springframework.boot.actuate.autoconfigure.web.server.ManagementContextFactory' (OnClassCondition)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:         - @ConditionalOnClass found required classes 'org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer', 'org.springframework.security.config.http.SessionCreationPolicy' (OnClassCondition)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:         - @ConditionalOnBooleanProperty (management.httpexchanges.recording.enabled=true) matched (OnPropertyCondition)
-./build/reports/tests/test/classes/ai.almostworking.gateway.GatewayApplicationTests.html:<a href="https://www.gradle.org">Gradle 9.2.1</a> at Feb 3, 2026, 10:36:46 PM</p>
-./build/reports/tests/test/packages/ai.almostworking.gateway.html:<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-./build/reports/tests/test/packages/ai.almostworking.gateway.html:<meta http-equiv="x-ua-compatible" content="IE=edge"/>
-./build/reports/tests/test/packages/ai.almostworking.gateway.html:<a href="https://www.gradle.org">Gradle 9.2.1</a> at Feb 3, 2026, 10:36:46 PM</p>
-./build/reports/problems/problems-report.html:    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path d="M166.9 264.5l-117.8 116c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17L127.3 256 25.1 155.6c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0l117.8 116c4.6 4.7 4.6 12.3-.1 17z" fill="%23999999" stroke="%23999999"/></svg>');
-./build/reports/problems/problems-report.html:    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path d="M119.5 326.9L3.5 209.1c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0L128 287.3l100.4-102.2c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L136.5 327c-4.7 4.6-12.3 4.6-17-.1z" fill="%23999999" stroke="%23999999"/></svg>');
-./build/reports/problems/problems-report.html:    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path d="M32 256 H224" stroke="%23999999" stroke-width="48" stroke-linecap="round"/></svg>');
-./build/reports/problems/problems-report.html:    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><circle cx="512" cy="512" r="200" /></svg>');
-./build/reports/problems/problems-report.html:    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z" fill="%23FC461E" stroke="%23FC461E"/></svg>');
-./build/reports/problems/problems-report.html:    background-image: url('data:image/svg+xml;utf8,<svg width="800px" height="800px" viewBox="-4.93 0 122.88 122.88" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  style="enable-background:new 0 0 113.01 122.88" xml:space="preserve"><g><path d="M44.13,102.06c-1.14,0.03-2.14-0.81-2.3-1.96c-0.17-1.2,0.64-2.31,1.82-2.54c-1.3-7.37-4.85-11.43-8.6-15.72 c-2.92-3.34-5.95-6.81-8.34-11.92c-2.35-5.03-3.64-10.23-3.6-15.63c0.05-5.4,1.42-10.96,4.4-16.71c0.02-0.04,0.04-0.07,0.06-0.11 l0,0c3.91-6.62,9.38-11.04,15.47-13.52c5.11-2.09,10.66-2.8,16.1-2.3c5.42,0.5,10.73,2.2,15.37,4.94 c5.9,3.49,10.75,8.67,13.42,15.21c1.44,3.54,2.42,7.49,2.54,11.82c0.12,4.31-0.62,8.96-2.61,13.88 c-2.66,6.59-6.18,10.68-9.47,14.51c-3.03,3.53-5.85,6.81-7.42,11.84c0.89,0.21,1.59,0.94,1.73,1.9c0.17,1.24-0.7,2.39-1.94,2.56 l-0.77,0.11c-0.14,1.09-0.23,2.26-0.27,3.51l0.25-0.04c1.24-0.17,2.39,0.7,2.56,1.94c0.17,1.24-0.7,2.39-1.94,2.56l-0.78,0.11 c0.01,0.15,0.02,0.3,0.03,0.45l0,0c0.07,0.88,0.08,1.73,0.03,2.54l0.13-0.02c1.25-0.15,2.38,0.74,2.54,1.98 c0.15,1.25-0.74,2.38-1.98,2.54l-1.68,0.21c-1.2,3.11-3.34,5.48-5.87,6.94c-1.74,1.01-3.67,1.59-5.61,1.71 c-1.97,0.12-3.96-0.25-5.78-1.13c-2.08-1.02-3.94-2.71-5.29-5.14c-0.65-0.33-1.13-0.97-1.23-1.75c-0.04-0.31-0.01-0.61,0.07-0.89 c-0.39-1.16-0.68-2.43-0.87-3.83l-0.07,0.01c-1.24,0.17-2.39-0.7-2.56-1.94c-0.17-1.24,0.7-2.39,1.94-2.56l0.54-0.08 C44.19,104.32,44.18,103.16,44.13,102.06L44.13,102.06z M2.18,58.86C1.01,58.89,0.04,57.98,0,56.81c-0.04-1.17,0.88-2.14,2.05-2.18 l8.7-0.3c1.17-0.04,2.14,0.88,2.18,2.05c0.04,1.17-0.88,2.14-2.05,2.18L2.18,58.86L2.18,58.86z M110.68,50.25 c1.16-0.12,2.2,0.73,2.32,1.89c0.12,1.16-0.73,2.2-1.89,2.32l-8.66,0.91c-1.16,0.12-2.2-0.73-2.32-1.89 c-0.12-1.16,0.73-2.2,1.89-2.32L110.68,50.25L110.68,50.25z M94.91,14.78c0.65-0.97,1.96-1.23,2.93-0.58 c0.97,0.65,1.23,1.96,0.58,2.93l-4.84,7.24c-0.65,0.97-1.96,1.23-2.93,0.58c-0.97-0.65-1.23-1.96-0.58-2.93L94.91,14.78 L94.91,14.78z M57.63,2.06c0.03-1.17,1-2.09,2.16-2.06c1.17,0.03,2.09,1,2.06,2.16l-0.22,8.7c-0.03,1.17-1,2.09-2.16,2.06 c-1.17-0.03-2.09-1-2.06-2.16L57.63,2.06L57.63,2.06z M13.88,15.53c-0.86-0.8-0.9-2.14-0.11-2.99c0.8-0.86,2.14-0.9,2.99-0.11 l6.37,5.94c0.86,0.8,0.9,2.14,0.11,2.99c-0.8,0.86-2.14,0.9-2.99,0.11L13.88,15.53L13.88,15.53z M47.88,96.95l18.49-2.63 c1.59-6.7,5.05-10.73,8.8-15.08c3.08-3.58,6.36-7.4,8.76-13.34c1.76-4.35,2.41-8.43,2.31-12.19c-0.1-3.75-0.96-7.21-2.24-10.34 c-2.3-5.63-6.51-10.11-11.65-13.15c-4.11-2.43-8.8-3.94-13.59-4.37c-4.77-0.44-9.64,0.19-14.13,2.02 c-5.26,2.15-9.99,5.97-13.39,11.72c-2.64,5.12-3.86,10.02-3.9,14.73c-0.04,4.74,1.11,9.33,3.2,13.8c2.13,4.56,4.97,7.8,7.69,10.92 C42.47,83.9,46.48,88.49,47.88,96.95L47.88,96.95z M65.62,99.02l-17.27,2.45c0.05,1.1,0.07,2.25,0.05,3.47l17.05-2.42 C65.47,101.29,65.52,100.12,65.62,99.02L65.62,99.02z M48.49,109.52c0.12,0.92,0.3,1.76,0.53,2.54l16.55-2.04 c0.11-0.86,0.13-1.77,0.05-2.74l0,0l0-0.02l-0.01-0.17L48.49,109.52L48.49,109.52z M51.37,116.36c0.64,0.67,1.35,1.19,2.1,1.55 c1.15,0.56,2.42,0.79,3.67,0.72c1.29-0.08,2.57-0.47,3.74-1.15c1.1-0.64,2.09-1.53,2.88-2.65L51.37,116.36L51.37,116.36z"/></g></svg>');
-./build/reports/problems/problems-report.html:    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M270.2 160h35.5c3.4 0 6.1 2.8 6 6.2l-7.5 196c-.1 3.2-2.8 5.8-6 5.8h-20.5c-3.2 0-5.9-2.5-6-5.8l-7.5-196c-.1-3.4 2.6-6.2 6-6.2zM288 388c-15.5 0-28 12.5-28 28s12.5 28 28 28 28-12.5 28-28-12.5-28-28-28zm281.5 52L329.6 24c-18.4-32-64.7-32-83.2 0L6.5 440c-18.4 31.9 4.6 72 41.6 72H528c36.8 0 60-40 41.5-72zM528 480H48c-12.3 0-20-13.3-13.9-24l240-416c6.1-10.6 21.6-10.7 27.7 0l240 416c6.2 10.6-1.5 24-13.8 24z" fill="%23DEAD22" stroke="%23DEAD22"/></svg>');
-./build/reports/problems/problems-report.html:    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28zm7.67-24h-16c-6.627 0-12-5.373-12-12v-.381c0-70.343 77.44-63.619 77.44-107.408 0-20.016-17.761-40.211-57.44-40.211-29.144 0-44.265 9.649-59.211 28.692-3.908 4.98-11.054 5.995-16.248 2.376l-13.134-9.15c-5.625-3.919-6.86-11.771-2.645-17.177C185.658 133.514 210.842 116 255.67 116c52.32 0 97.44 29.751 97.44 80.211 0 67.414-77.44 63.849-77.44 107.408V304c0 6.627-5.373 12-12 12zM256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8z" fill="%23999999" stroke="%23999999"/></svg>');
-./build/reports/problems/problems-report.html:    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M433.941 193.941l-51.882-51.882A48 48 0 0 0 348.118 128H320V80c0-26.51-21.49-48-48-48h-66.752C198.643 13.377 180.858 0 160 0s-38.643 13.377-45.248 32H48C21.49 32 0 53.49 0 80v288c0 26.51 21.49 48 48 48h80v48c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48V227.882a48 48 0 0 0-14.059-33.941zm-22.627 22.627a15.888 15.888 0 0 1 4.195 7.432H352v-63.509a15.88 15.88 0 0 1 7.431 4.195l51.883 51.882zM160 30c9.941 0 18 8.059 18 18s-8.059 18-18 18-18-8.059-18-18 8.059-18 18-18zM48 384c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h66.752c6.605 18.623 24.389 32 45.248 32s38.643-13.377 45.248-32H272c8.822 0 16 7.178 16 16v48H176c-26.51 0-48 21.49-48 48v208H48zm352 96H176c-8.822 0-16-7.178-16-16V176c0-8.822 7.178-16 16-16h144v72c0 13.2 10.8 24 24 24h72v208c0 8.822-7.178 16-16 16z" fill="%23999999" stroke="%23999999"/></svg>');
-./build/reports/problems/problems-report.html:    src: url("https://assets.gradle.com/lato/fonts/lato-semibold/lato-semibold.woff2") format("woff2"),
-./build/reports/problems/problems-report.html:    url("https://assets.gradle.com/lato/fonts/lato-semibold/lato-semibold.woff") format("woff");
-./build/reports/problems/problems-report.html:    src: url("https://assets.gradle.com/lato/fonts/lato-bold/lato-bold.woff2") format("woff2"),
-./build/reports/problems/problems-report.html:    url("https://assets.gradle.com/lato/fonts/lato-bold/lato-bold.woff") format("woff");
-./build/reports/problems/problems-report.html:    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" />
-./build/reports/problems/problems-report.html:{"diagnostics":[{"locations":[{"path":"/Users/moldo/code/adrian/minio-gateway/src/main/java/ai/almostworking/gateway/config/GatewaySecConfig.java"},{"taskPath":":compileJava"}],"problem":[{"text":"/Users/moldo/code/adrian/minio-gateway/src/main/java/ai/almostworking/gateway/config/GatewaySecConfig.java uses unchecked or unsafe operations."}],"severity":"ADVICE","problemDetails":[{"text":"Note: /Users/moldo/code/adrian/minio-gateway/src/main/java/ai/almostworking/gateway/config/GatewaySecConfig.java uses unchecked or unsafe operations."}],"contextualLabel":"/Users/moldo/code/adrian/minio-gateway/src/main/java/ai/almostworking/gateway/config/GatewaySecConfig.java uses unchecked or unsafe operations.","problemId":[{"name":"java","displayName":"Java compilation"},{"name":"compilation","displayName":"Compilation"},{"name":"compiler.note.unchecked.filename","displayName":"/Users/moldo/code/adrian/minio-gateway/src/main/java/ai/almostworking/gateway/config/GatewaySecConfig.java uses unchecked or unsafe operations."}]},{"locations":[{"path":"/Users/moldo/code/adrian/minio-gateway/src/main/java/ai/almostworking/gateway/config/GatewaySecConfig.java"},{"taskPath":":compileJava"}],"problem":[{"text":"Recompile with -Xlint:unchecked for details."}],"severity":"ADVICE","problemDetails":[{"text":"Note: Recompile with -Xlint:unchecked for details."}],"contextualLabel":"Recompile with -Xlint:unchecked for details.","problemId":[{"name":"java","displayName":"Java compilation"},{"name":"compilation","displayName":"Compilation"},{"name":"compiler.note.unchecked.recompile","displayName":"Recompile with -Xlint:unchecked for details."}]}],"problemsReport":{"totalProblemCount":2,"buildName":"gateway","requestedTasks":":test","documentationLink":"https://docs.gradle.org/9.2.1/userguide/reporting_problems.html","documentationLinkCaption":"Problem report","summaries":[]}}
-./full_logs.txt:For more information on this calculation, see https://paketo.io/docs/reference/java-reference/#memory-calculator
-./full_logs.txt:Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveOAuth2AuthorizedClientManager': Failed to instantiate [org.springframework.security.oauth2.client.ReactiveOAuth2AuthorizedClientManager]: Factory method 'getAuthorizedClientManager' threw exception with message: Error creating bean with name 'reactiveClientRegistrationRepository' defined in class path resource [org/springframework/boot/security/oauth2/client/autoconfigure/reactive/ReactiveOAuth2ClientConfigurations$ReactiveClientRegistrationRepositoryConfiguration.class]: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryReactiveClientRegistrationRepository]: Factory method 'reactiveClientRegistrationRepository' threw exception with message: Unable to resolve Configuration with the provided Issuer of "http://localhost:8080/realms/intwork"
-./full_logs.txt:Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.oauth2.client.ReactiveOAuth2AuthorizedClientManager]: Factory method 'getAuthorizedClientManager' threw exception with message: Error creating bean with name 'reactiveClientRegistrationRepository' defined in class path resource [org/springframework/boot/security/oauth2/client/autoconfigure/reactive/ReactiveOAuth2ClientConfigurations$ReactiveClientRegistrationRepositoryConfiguration.class]: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryReactiveClientRegistrationRepository]: Factory method 'reactiveClientRegistrationRepository' threw exception with message: Unable to resolve Configuration with the provided Issuer of "http://localhost:8080/realms/intwork"
-./full_logs.txt:Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveClientRegistrationRepository' defined in class path resource [org/springframework/boot/security/oauth2/client/autoconfigure/reactive/ReactiveOAuth2ClientConfigurations$ReactiveClientRegistrationRepositoryConfiguration.class]: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryReactiveClientRegistrationRepository]: Factory method 'reactiveClientRegistrationRepository' threw exception with message: Unable to resolve Configuration with the provided Issuer of "http://localhost:8080/realms/intwork"
-./full_logs.txt:Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryReactiveClientRegistrationRepository]: Factory method 'reactiveClientRegistrationRepository' threw exception with message: Unable to resolve Configuration with the provided Issuer of "http://localhost:8080/realms/intwork"
-./full_logs.txt:Caused by: java.lang.IllegalArgumentException: Unable to resolve Configuration with the provided Issuer of "http://localhost:8080/realms/intwork"
-./full_logs.txt:Caused by: org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8080/realms/intwork/.well-known/openid-configuration": Connection refused
-./full_logs.txt:        at java.base/sun.net.www.http.HttpClient.openServer(Unknown Source) ~[na:na]
-./full_logs.txt:        at java.base/sun.net.www.http.HttpClient.openServer(Unknown Source) ~[na:na]
-./full_logs.txt:        at java.base/sun.net.www.http.HttpClient.<init>(Unknown Source) ~[na:na]
-./full_logs.txt:        at java.base/sun.net.www.http.HttpClient.New(Unknown Source) ~[na:na]
-./full_logs.txt:        at java.base/sun.net.www.http.HttpClient.New(Unknown Source) ~[na:na]
-./full_logs.txt:        at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(Unknown Source) ~[na:na]
-./full_logs.txt:        at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(Unknown Source) ~[na:na]
-./full_logs.txt:        at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(Unknown Source) ~[na:na]
-./full_logs.txt:        at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(Unknown Source) ~[na:na]
-./full_logs.txt:        at org.springframework.http.client.SimpleClientHttpRequest.executeInternal(SimpleClientHttpRequest.java:80) ~[spring-web-7.0.2.jar:7.0.2]
-./full_logs.txt:        at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:87) ~[spring-web-7.0.2.jar:7.0.2]
-./full_logs.txt:        at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80) ~[spring-web-7.0.2.jar:7.0.2]
-./.git/config:  url = https://github.com/gluonstream/minio-gateway.git
-./.git/logs/HEAD:0000000000000000000000000000000000000000 3da0f2847d60f527cd11c31b78ab14ddea3e9268 moldo <44651279+avrabie@users.noreply.github.com> 1770153949 +0100   clone: from https://github.com/gluonstream/minio-gateway.git
-./.git/logs/refs/heads/main:0000000000000000000000000000000000000000 3da0f2847d60f527cd11c31b78ab14ddea3e9268 moldo <44651279+avrabie@users.noreply.github.com> 1770153949 +0100        clone: from https://github.com/gluonstream/minio-gateway.git
-./.git/logs/refs/remotes/origin/HEAD:0000000000000000000000000000000000000000 3da0f2847d60f527cd11c31b78ab14ddea3e9268 moldo <44651279+avrabie@users.noreply.github.com> 1770153949 +0100       clone: from https://github.com/gluonstream/minio-gateway.git
-./.git/hooks/fsmonitor-watchman.sample:# (https://facebook.github.io/watchman/) with git to speed up detecting
-./gradlew.bat:@rem      https://www.apache.org/licenses/LICENSE-2.0
-./.idea/.gitignore:/httpRequests/
-./src/main/resources/application.yaml:            issuer-uri: ${KEYCLOAK_ISSUER_URI:http://localhost:8002/realms/intwork}
-./src/main/resources/application.yaml:          issuer-uri: ${KEYCLOAK_ISSUER_URI:http://localhost:8002/realms/intwork}
-./src/main/resources/application.yaml:    url: ${BE_MINIO_URL:http://localhost:8080}
-./src/main/resources/application.yaml:    url: ${BE_STORAGE_URL:http://localhost:9000}
-./src/main/resources/application.yaml:  url: ${API_URL:http://localhost:8081}
-./src/main/java/ai/almostworking/gateway/config/GatewaySecConfig.java:    public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
-./src/main/java/ai/almostworking/gateway/config/GatewaySecConfig.java:        return http
-./src/main/java/ai/almostworking/gateway/config/GatewaySecConfig.java:                                new RedirectServerAuthenticationSuccessHandler("http://localhost:5173/")
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2026-02-04T17:13:09Z"
+    generateName: ingress-nginx-controller-589b66c8-
+    generation: 1
+    labels:
+      app.kubernetes.io/component: controller
+      app.kubernetes.io/instance: ingress-nginx
+      app.kubernetes.io/name: ingress-nginx
+      app.kubernetes.io/part-of: ingress-nginx
+      app.kubernetes.io/version: 1.14.3
+      pod-template-hash: 589b66c8
+    name: ingress-nginx-controller-589b66c8-bnh54
+    namespace: ingress-nginx
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: ingress-nginx-controller-589b66c8
+      uid: 7278d601-d8db-4b1e-a90c-f8b8fd1abee5
+    resourceVersion: "639"
+    uid: 5e7a1930-5cec-4053-ab8f-fdbbbf547b51
+  spec:
+    automountServiceAccountToken: true
+    containers:
+    - args:
+      - /nginx-ingress-controller
+      - --election-id=ingress-nginx-leader
+      - --controller-class=k8s.io/ingress-nginx
+      - --ingress-class=nginx
+      - --configmap=$(POD_NAMESPACE)/ingress-nginx-controller
+      - --validating-webhook=:8443
+      - --validating-webhook-certificate=/usr/local/certificates/cert
+      - --validating-webhook-key=/usr/local/certificates/key
+      - --watch-ingress-without-class=true
+      - --publish-status-address=localhost
+      env:
+      - name: POD_NAME
+        valueFrom:
+          fieldRef:
+            apiVersion: v1
+            fieldPath: metadata.name
+      - name: POD_NAMESPACE
+        valueFrom:
+          fieldRef:
+            apiVersion: v1
+            fieldPath: metadata.namespace
+      - name: LD_PRELOAD
+        value: /usr/local/lib/libmimalloc.so
+      image: registry.k8s.io/ingress-nginx/controller:v1.14.3@sha256:82917be97c0939f6ada1717bb39aa7e66c229d6cfb10dcfc8f1bd42f9efe0f81
+      imagePullPolicy: IfNotPresent
+      lifecycle:
+        preStop:
+          exec:
+            command:
+            - /wait-shutdown
+      livenessProbe:
+        failureThreshold: 5
+        httpGet:
+          path: /healthz
+          port: 10254
+          scheme: HTTP
+        initialDelaySeconds: 10
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 1
+      name: controller
+      ports:
+      - containerPort: 80
+        hostPort: 80
+        name: http
+        protocol: TCP
+      - containerPort: 443
+        hostPort: 443
+        name: https
+        protocol: TCP
+      - containerPort: 8443
+        name: webhook
+        protocol: TCP
+      readinessProbe:
+        failureThreshold: 3
+        httpGet:
+          path: /healthz
+          port: 10254
+          scheme: HTTP
+        initialDelaySeconds: 10
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 1
+      resources:
+        requests:
+          cpu: 100m
+          memory: 90Mi
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          add:
+          - NET_BIND_SERVICE
+          drop:
+          - ALL
+        readOnlyRootFilesystem: false
+        runAsGroup: 82
+        runAsNonRoot: true
+        runAsUser: 101
+        seccompProfile:
+          type: RuntimeDefault
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /usr/local/certificates/
+        name: webhook-cert
+        readOnly: true
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-h8rc4
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: s4v3-control-plane
+    nodeSelector:
+      kubernetes.io/os: linux
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: ingress-nginx
+    serviceAccountName: ingress-nginx
+    terminationGracePeriodSeconds: 0
+    tolerations:
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/master
+      operator: Equal
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/control-plane
+      operator: Equal
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: webhook-cert
+      secret:
+        defaultMode: 420
+        secretName: ingress-nginx-admission
+    - name: kube-api-access-h8rc4
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2026-02-04T17:13:31Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: "2026-02-04T17:13:21Z"
+      observedGeneration: 1
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2026-02-04T17:13:43Z"
+      observedGeneration: 1
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2026-02-04T17:13:43Z"
+      observedGeneration: 1
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2026-02-04T17:13:21Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - allocatedResources:
+        cpu: 100m
+        memory: 90Mi
+      containerID: containerd://aee2bf6c15a43020d532fbdd2e99b9defd45ed91679a942789931519ac09709d
+      image: sha256:c919dd92fefa80e262c76a70465024e49851e0253537cda6f6c7bf8e0085bcaa
+      imageID: registry.k8s.io/ingress-nginx/controller@sha256:82917be97c0939f6ada1717bb39aa7e66c229d6cfb10dcfc8f1bd42f9efe0f81
+      lastState: {}
+      name: controller
+      ready: true
+      resources:
+        requests:
+          cpu: 100m
+          memory: 90Mi
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2026-02-04T17:13:30Z"
+      user:
+        linux:
+          gid: 82
+          supplementalGroups:
+          - 82
+          uid: 101
+      volumeMounts:
+      - mountPath: /usr/local/certificates/
+        name: webhook-cert
+        readOnly: true
+        recursiveReadOnly: Disabled
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-h8rc4
+        readOnly: true
+        recursiveReadOnly: Disabled
+    hostIP: 172.21.0.2
+    hostIPs:
+    - ip: 172.21.0.2
+    observedGeneration: 1
+    phase: Running
+    podIP: 10.244.0.7
+    podIPs:
+    - ip: 10.244.0.7
+    qosClass: Burstable
+    startTime: "2026-02-04T17:13:21Z"
+kind: List
+metadata:
+  resourceVersion: ""
