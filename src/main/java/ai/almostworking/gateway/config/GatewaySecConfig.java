@@ -2,6 +2,7 @@ package ai.almostworking.gateway.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
@@ -38,6 +39,9 @@ import java.util.stream.Collectors;
 public class GatewaySecConfig {
     private static final Logger logger = LoggerFactory.getLogger(GatewaySecConfig.class);
 
+    @Value("${success.redirect.url:http://localhost:5173/}")
+    private String successRedirectUrl;
+
     @Bean
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
         return http
@@ -51,7 +55,7 @@ public class GatewaySecConfig {
 //                .oauth2Login(Customizer.withDefaults())
                 .oauth2Login(oauth2 -> oauth2
                         .authenticationSuccessHandler(
-                                new RedirectServerAuthenticationSuccessHandler("http://localhost:5173/")
+                                new RedirectServerAuthenticationSuccessHandler(successRedirectUrl)
                         )
                 )
                 .csrf(ServerHttpSecurity.CsrfSpec::disable)

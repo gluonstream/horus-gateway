@@ -1,3 +1,6 @@
+import org.gradle.kotlin.dsl.named
+import org.springframework.boot.gradle.tasks.bundling.BootBuildImage
+
 plugins {
     java
     id("org.springframework.boot") version "4.0.1"
@@ -48,4 +51,11 @@ dependencyManagement {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+tasks.named<BootBuildImage>("bootBuildImage") {
+    val tag = project.findProperty("imageTag")?.toString() ?: "latest"
+
+    imageName.set("gluonstream/minio-gateway:$tag")
+    tags.set(listOf("gluonstream/minio-gateway:latest"))
 }

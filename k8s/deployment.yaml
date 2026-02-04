@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minio-gateway
+  labels:
+    app: minio-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: minio-gateway
+  template:
+    metadata:
+      labels:
+        app: minio-gateway
+    spec:
+      containers:
+      - name: minio-gateway
+        image: gluonstream/minio-gateway:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 9090
+        env:
+        - name: SERVER_PORT
+          value: "9090"
+        - name: KEYCLOAK_ISSUER_URI
+          value: "http://keycloak.keycloak-namespace.svc.cluster.local:8080/realms/intwork"
+        - name: BE_MINIO_URL
+          value: "http://be-minio.be-minio.svc.cluster.local:8080"
+        - name: BE_STORAGE_URL
+          value: "http://minio.be-minio.svc.cluster.local:9000"
+        - name: API_URL
+          value: "http://api.be-minio.svc.cluster.local:8081"
+        - name: SUCCESS_REDIRECT_URL
+          value: "http://localhost:5173/" # Change this to your frontend URL
+        - name: GATEWAY_CLIENT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: gateway-secrets
+              key: gateway-client-secret
+        livenessProbe:
+          httpGet:
+            path: /actuator/health/liveness
+            port: 9090
+          initialDelaySeconds: 60
+        readinessProbe:
+          httpGet:
+            path: /actuator/health/readiness
+            port: 9090
+          initialDelaySeconds: 60

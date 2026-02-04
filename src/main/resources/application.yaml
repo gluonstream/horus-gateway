@@ -42,11 +42,14 @@ spring:
           issuer-uri: ${KEYCLOAK_ISSUER_URI:http://localhost:8002/realms/intwork}
 be:
   minio:
-    url: http://localhost:8080
+    url: ${BE_MINIO_URL:http://localhost:8080}
   storage:
-    url: http://localhost:9000
+    url: ${BE_STORAGE_URL:http://localhost:9000}
 api:
-  url: http://localhost:8081
+  url: ${API_URL:http://localhost:8081}
+success:
+  redirect:
+    url: ${SUCCESS_REDIRECT_URL:http://localhost:5173/}
 
 
 
