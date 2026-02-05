@@ -17,7 +17,7 @@ spec:
       containers:
       - name: minio-gateway
         image: gluonstream/minio-gateway:latest
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
         - containerPort: 9090
         env:

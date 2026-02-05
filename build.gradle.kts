@@ -59,3 +59,5 @@ tasks.named<BootBuildImage>("bootBuildImage") {
     imageName.set("gluonstream/minio-gateway:$tag")
     tags.set(listOf("gluonstream/minio-gateway:latest"))
 }
+
+// docker push gluonstream/minio-gateway
