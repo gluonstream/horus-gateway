@@ -16,13 +16,13 @@ spec:
                 name: minio-gateway
                 port:
                   number: 9090
-          - path: /  #React App
+          - path: /  #React App through Gateway
             pathType: Prefix
             backend:
               service:
-                name: react-frontend
+                name: minio-gateway
                 port:
-                  number: 80
+                  number: 9090
           - path: /oauth2
             pathType: Prefix
             backend:

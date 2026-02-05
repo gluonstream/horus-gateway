@@ -16,6 +16,9 @@ public class GatewayRoutesConfig {
     @Value("${api.url}")
     private String apiUrl;
 
+    @Value("${fe.url}")
+    private String feUrl;
+
     @Value("${be.storage.url}")
     private String minioStorageUrl;
 
@@ -42,7 +45,7 @@ public class GatewayRoutesConfig {
 //                        .filters(f -> f.filter(tokenRelay.apply()))
 //                        .uri(apiUrl))
                 .route("frontend", p -> p.path("/**")
-                        .uri("http://172.21.0.1:80"))
+                        .uri(feUrl))
                 .build();
     }
 }

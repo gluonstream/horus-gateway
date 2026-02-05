@@ -17,5 +17,5 @@ echo " get the kubectl get nodes -o wide and note the IP, you will need it in de
 echo "you need to put the ip in the deployment in hostAliases 172.21.0.2 in both: gateway, be-minio for now. This is basically an internal k8s DNS for pods"
 kubectl get nodes -o wide
 echo "Apply the services: kubectl apply -k k8s/ for Keycloak, BE, then Gateway"
-echo "Then apply the ingress: kubectl apply -f kind/minio-gateway-ingress.yaml"
+echo "Then apply the ingress: kubectl apply -f k8s/minio-gateway-ingress.yaml"
 
