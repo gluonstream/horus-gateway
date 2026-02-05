@@ -47,7 +47,7 @@ public class GatewaySecConfig {
         return http
                 .securityContextRepository(new WebSessionServerSecurityContextRepository())
                 .authorizeExchange(exchange -> exchange
-                        .pathMatchers("/", "/static/**").permitAll()
+                        .pathMatchers("/", "/static/**", "/assets/**", "/*.svg", "/*.ico", "/*.png", "/*.js", "/*.css").permitAll()
                         .pathMatchers("/actuator/health/**").permitAll()
                         .pathMatchers("/greetings").permitAll()
                         .pathMatchers("/api/greetings").permitAll()

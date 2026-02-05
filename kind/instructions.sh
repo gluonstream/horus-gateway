@@ -18,4 +18,6 @@ echo "you need to put the ip in the deployment in hostAliases 172.21.0.2 in both
 kubectl get nodes -o wide
 echo "Apply the services: kubectl apply -k k8s/ for Keycloak, BE, then Gateway"
 echo "Then apply the ingress: kubectl apply -f k8s/minio-gateway-ingress.yaml"
-
+echo "After building the image:"
+echo "kind load docker-image gluonstream/minio-gateway:assets-fix --name s4v3"
+echo "to upgrade: kubectl rollout status deployment/minio-gateway -n minio-gateway --timeout=180s"
