@@ -1,0 +1,50 @@
+If you want to avoid hardcoding the Node's IP address (`172.21.0.2`) directly in your `deployment.yaml`, there are several cleaner and more automated approaches. Here are the best practices:
+
+### 1. The CoreDNS Rewrite (Recommended)
+You can configure CoreDNS (the cluster's DNS server) to automatically resolve your custom domains to the internal service IP of the Nginx Ingress Controller. This makes the domain resolution work cluster-wide for all pods without any changes to individual deployments.
+
+**How to do it:**
+1.  Find the Ingress Controller's Service IP:
+    ```bash
+    kubectl get svc -n ingress-nginx ingress-nginx-controller
+    ```
+2.  Edit the CoreDNS ConfigMap:
+    ```bash
+    kubectl edit cm coredns -n kube-system
+    ```
+3.  Add a `rewrite` rule inside the `.:53` block:
+    ```text
+    rewrite name auth.s4v3.local ingress-nginx-controller.ingress-nginx.svc.cluster.local
+    ```
+
+### 2. ExternalDNS with CoreDNS
+In production, tools like **ExternalDNS** are used. They watch for new Ingress resources and automatically update DNS records. In a local `kind` environment, you can use the `coredns` provider for ExternalDNS to dynamically create records for any host listed in your Ingress files.
+
+### 3. Kubernetes `ExternalName` Service
+You can create a special Service of type `ExternalName` that acts as a CNAME inside the cluster.
+
+**Example `keycloak-external.yaml`:**
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: auth-s4v3-local
+  namespace: minio-gateway
+spec:
+  type: ExternalName
+  externalName: keycloak.keycloak-namespace.svc.cluster.local
+```
+Then, in your application, you could theoretically use `http://auth-s4v3-local/realms/intwork`. However, this is tricky with OIDC because the `Issuer URI` must match exactly what the browser sees (`auth.s4v3.local`), so the `Host` header must be preserved.
+
+### 4. Local DNS Server (dnsmasq)
+You can run a local DNS server like `dnsmasq` on your host machine and configure `kind` to use your host as the DNS server.
+1.  Configure `dnsmasq` to resolve `*.s4v3.local` to `127.0.0.1`.
+2.  Configure the `kind` cluster to use your host's IP for DNS via the `kubeadmConfigPatches`.
+
+### Why `hostAliases` was chosen first:
+While the alternatives above are "cleaner," `hostAliases` is the most common choice for local development because:
+*   **Zero Infrastructure Changes**: You don't need to modify the cluster's system components (CoreDNS).
+*   **Portability**: The deployment "just works" on another developer's machine as long as they have the same `kind` setup.
+*   **Isolation**: It only affects the specific pod that needs it, reducing the risk of breaking cluster-wide DNS.
+
+**Best Recommendation for your setup**: If you want to move away from IPs, use **Option 1 (CoreDNS Rewrite)**. It is the standard way to handle "Split DNS" where a domain should resolve to an internal service inside the cluster but a public IP outside.

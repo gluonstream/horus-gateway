@@ -38,6 +38,8 @@ public class GatewayRoutesConfig {
                 .route("api-all", p -> p.path("/api/**")
                         .filters(f -> f.filter(tokenRelay.apply()))
                         .uri(apiUrl))
+                .route("frontend", p -> p.path("/**")
+                        .uri("http://172.21.0.1:5173"))
                 .build();
     }
 }

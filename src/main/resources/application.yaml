@@ -5,6 +5,7 @@ logging:
 
 server:
   port: 9090
+  forward-headers-strategy: native # trying to avoid invalid credentials issue in k8s when using ingress from a browser
 spring:
   application:
     name: gateway
