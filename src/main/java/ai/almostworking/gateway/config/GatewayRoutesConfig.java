@@ -27,8 +27,7 @@ public class GatewayRoutesConfig {
         return builder.routes()
                 .route("minio-greetings", p -> p.path("/api/greetings")
                         .uri(beMinio))
-                .route("storage-signature", p -> p.query("X-Amz-Signature")
-                        .uri(minioStorageUrl))
+
 
                 .route("minio-hello", p -> p.path("/api/hello")
                         .filters(f -> f.filter(tokenRelay.apply()))
@@ -37,13 +36,11 @@ public class GatewayRoutesConfig {
                         .filters(f -> f.filter(tokenRelay.apply()))
                         .uri(beMinio))
 
+                .route("storage-signature", p -> p.query("X-Amz-Signature")
+                        .uri(minioStorageUrl))
                 .route("minio-all", p -> p.path("/api/minio/**")
                         .filters(f -> f.filter(tokenRelay.apply()))
                         .uri(beMinio))
-
-//                .route("api-all", p -> p.path("/api/**")
-//                        .filters(f -> f.filter(tokenRelay.apply()))
-//                        .uri(apiUrl))
                 .route("frontend", p -> p.path("/**")
                         .uri(feUrl))
                 .build();
