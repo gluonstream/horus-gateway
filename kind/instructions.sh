@@ -19,5 +19,5 @@ kubectl get nodes -o wide
 echo "Apply the services: kubectl apply -k k8s/ for Keycloak, BE, then Gateway"
 echo "Then apply the ingress: kubectl apply -f k8s/minio-gateway-ingress.yaml"
 echo "After building the image:"
-echo "kind load docker-image gluonstream/minio-gateway:assets-fix --name s4v3"
+echo "  docker push gluonstream/minio-gateway:latest     "
 echo "to upgrade: kubectl rollout status deployment/minio-gateway -n minio-gateway --timeout=180s"
