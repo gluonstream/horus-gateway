@@ -9,6 +9,9 @@ server:
 spring:
   application:
     name: gateway
+  http:
+    codecs:
+      max-in-memory-size: 10MB
   management:
     endpoints:
       web:
