@@ -27,8 +27,6 @@ public class GatewayRoutesConfig {
         return builder.routes()
                 .route("minio-greetings", p -> p.path("/api/greetings")
                         .uri(beMinio))
-
-
                 .route("minio-hello", p -> p.path("/api/hello")
                         .filters(f -> f.filter(tokenRelay.apply()))
                         .uri(beMinio))
