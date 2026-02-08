@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: minio-gateway
-        image: gluonstream/minio-gateway:latest
+        image: gluonstream/minio-gateway2:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 9090
@@ -55,7 +55,7 @@ spec:
             port: 9090
           initialDelaySeconds: 60
       hostAliases:
-        - ip: "172.21.0.2"
+        - ip: "192.168.188.160"
           hostnames:
           - "auth.s4v3.local"
           - "s4v3.local"
