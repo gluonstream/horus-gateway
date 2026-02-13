@@ -8,7 +8,7 @@ resources:
   - deployment.yaml
   - service.yaml
   - secrets.yaml
-  - minio-gateway-ingress.yaml
+  - minio-gateway-http.yaml
 
 labels:
   - includeSelectors: true
