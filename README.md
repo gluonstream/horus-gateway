@@ -5,7 +5,6 @@ TL;DR
 kubectl apply -k ./k8s
 ```
 ### How it works
-Keycloak listens internally on 8080
 Docker exposes it on http://localhost:8001
 All *.json files in ./keycloak/ are imported once
 Realm import happens:
