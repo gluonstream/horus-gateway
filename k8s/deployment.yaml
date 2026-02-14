@@ -27,14 +27,18 @@ spec:
           value: native # trying to avoid invalid credentials issue in k8s when using ingress from a browser
         - name: SPRING_MAIN_USE_RELATIVE_REDIRECTS
           value: "true"
-        - name: KEYCLOAK_ISSUER_URI
+        - name: AUTH_EXTERNAL_ISSUER_URI
           value: "http://auth.s4v3.local/realms/intwork"
+        - name: AUTH_INTERNAL_BASE_URL
+          value: "http://keycloak.keycloak-namespace.svc.cluster.local:8080"
+        - name: AUTH_REALM
+          value: "intwork"
         - name: BE_MINIO_URL
-          value: "http://be-minio.be-minio.svc.cluster.local:8080"
+          value: "http://be-minio.minio-namespace.svc.cluster.local:8080"
         - name: BE_STORAGE_URL
-          value: "http://minio.be-minio.svc.cluster.local:9000"
+          value: "http://minio.minio-namespace.svc.cluster.local:9000"
         - name: API_URL
-          value: "http://api.be-minio.svc.cluster.local:8081"
+          value: "http://api.minio-namespace.svc.cluster.local:8081"
         - name: FE_URL
           value: "http://execodex-fe.execodex.svc.cluster.local:80"
         - name: SUCCESS_REDIRECT_URL
@@ -54,9 +58,9 @@ spec:
             path: /actuator/health/readiness
             port: 9090
           initialDelaySeconds: 60
-      hostAliases:
-        - ip: "172.21.0.2"
-          hostnames:
-          - "auth.s4v3.local"
-          - "s4v3.local"
-          - "minio.s4v3.local"
+#      hostAliases:
+#        - ip: "172.21.0.2"
+#          hostnames:
+#          - "auth.s4v3.local"
+#          - "s4v3.local"
+#          - "minio.s4v3.local"

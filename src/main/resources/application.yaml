@@ -40,10 +40,22 @@ spring:
             redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
         provider:
           gateway-rest-client:
-            issuer-uri: ${KEYCLOAK_ISSUER_URI:http://localhost:8002/realms/intwork}
+            authorization-uri: ${auth.external.authorization-uri}
+            token-uri: ${auth.internal.token-uri}
+            jwk-set-uri: ${auth.internal.jwk-set-uri}
+            user-name-attribute: ${AUTH_USER_NAME_ATTRIBUTE:sub}
       resourceserver:
         jwt:
-          issuer-uri: ${KEYCLOAK_ISSUER_URI:http://localhost:8002/realms/intwork}
+          jwk-set-uri: ${auth.internal.jwk-set-uri}
+auth:
+  external:
+    issuer-uri: ${AUTH_EXTERNAL_ISSUER_URI:${KEYCLOAK_ISSUER_URI:http://localhost:8002/realms/intwork}}
+    authorization-uri: ${AUTH_EXTERNAL_AUTHORIZATION_URI:${auth.external.issuer-uri}/protocol/openid-connect/auth}
+  internal:
+    base-url: ${AUTH_INTERNAL_BASE_URL:http://localhost:8002}
+    realm: ${AUTH_REALM:intwork}
+    token-uri: ${AUTH_INTERNAL_TOKEN_URI:${auth.internal.base-url}/realms/${auth.internal.realm}/protocol/openid-connect/token}
+    jwk-set-uri: ${AUTH_INTERNAL_JWK_SET_URI:${auth.internal.base-url}/realms/${auth.internal.realm}/protocol/openid-connect/certs}
 be:
   minio:
     url: ${BE_MINIO_URL:http://localhost:8080}
@@ -56,7 +68,3 @@ fe:
 success:
   redirect:
     url: ${SUCCESS_REDIRECT_URL:http://localhost:5173/}
-
-
-
-

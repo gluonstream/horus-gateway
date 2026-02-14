@@ -13,9 +13,9 @@ kubectl wait --namespace ingress-nginx \
   --selector=app.kubernetes.io/component=controller \
   --timeout=90s
 
-echo " get the kubectl get nodes -o wide and note the IP, you will need it in deployment aliases"
-echo "you need to put the ip in the deployment in hostAliases 172.21.0.2 in both: gateway, be-minio for now. This is basically an internal k8s DNS for pods"
-kubectl get nodes -o wide
+echo "No hostAliases needed: use internal Service DNS for pod-to-pod and external hostnames for browser redirects."
+echo "Internal auth URL: http://keycloak.keycloak-namespace.svc.cluster.local:8080 (set via AUTH_INTERNAL_BASE_URL)"
+echo "External auth URL: http://auth.s4v3.local/realms/intwork (set via AUTH_EXTERNAL_ISSUER_URI)"
 echo "Apply the services: kubectl apply -k k8s/ for Keycloak, BE, then Gateway"
 echo "Then apply the ingress: kubectl apply -f k8s/minio-gateway-ingress.yaml"
 echo "After building the image:"
