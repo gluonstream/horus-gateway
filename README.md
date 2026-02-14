@@ -1,31 +1,9 @@
 # Keycloak Realm Import
 
-This document explains how Keycloak realm import works, limitations, and recommended best practices for development and production environments.
-
-## Overview
-
-Keycloak's realm JSON import is intended for initial bootstrap only. It will import a realm only when Keycloak starts and the realm does not already exist in the database. Subsequent changes to the JSON file will not be re-applied.
-
-## Import behavior (important)
-
-A realm JSON is imported only when all of the following are true:
-
-- The realm does **not** already exist in the Keycloak database.
-- Keycloak is starting up.
-- Keycloak is started with the `--import-realm` flag.
-
-Example (local dev):
+TL;DR
 ```bash
-./kc.sh start-dev --import-realm
+kubectl apply -k ./k8s
 ```
-
-If the realm already exists, Keycloak will silently skip the import.
-What does NOT trigger a re-import
-Restarting the container
-Updating the realm JSON file on disk
-Reusing the same Keycloak data volume
-Changes will not be re-applied once the realm exists in the database.
-
 ### How it works
 Keycloak listens internally on 8080
 Docker exposes it on http://localhost:8001
