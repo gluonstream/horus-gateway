@@ -20,29 +20,10 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 9090
+        envFrom:
+        - configMapRef:
+            name: minio-gateway-config
         env:
-        - name: SERVER_PORT
-          value: "9090"
-        - name: SERVER_FORWARD_HEADERS_STRATEGY
-          value: native # trying to avoid invalid credentials issue in k8s when using ingress from a browser
-        - name: SPRING_MAIN_USE_RELATIVE_REDIRECTS
-          value: "true"
-        - name: AUTH_EXTERNAL_ISSUER_URI
-          value: "http://auth.s4v3.local/realms/intwork"
-        - name: AUTH_INTERNAL_BASE_URL
-          value: "http://keycloak.keycloak-namespace.svc.cluster.local:8080"
-        - name: AUTH_REALM
-          value: "intwork"
-        - name: BE_MINIO_URL
-          value: "http://be-minio.minio-namespace.svc.cluster.local:8080"
-        - name: BE_STORAGE_URL
-          value: "http://minio.minio-namespace.svc.cluster.local:9000"
-        - name: API_URL
-          value: "http://api.minio-namespace.svc.cluster.local:8081"
-        - name: FE_URL
-          value: "http://execodex-fe.execodex.svc.cluster.local:80"
-        - name: SUCCESS_REDIRECT_URL
-          value: "http://s4v3.local/" # Change this to your frontend URL
         - name: GATEWAY_CLIENT_SECRET
           valueFrom:
             secretKeyRef:

@@ -5,6 +5,7 @@ namespace: horus-namespace
 
 resources:
   - namespace.yaml
+  - configmap.yaml
   - deployment.yaml
   - service.yaml
   - secrets.yaml
