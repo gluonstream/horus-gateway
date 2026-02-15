@@ -11,6 +11,7 @@ spec:
       namespace: gateway-namespace
   hostnames:
     - s4v3.local
+    - s4v3.net
   rules:
     - matches:
         - path:
