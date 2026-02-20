@@ -7,3 +7,4 @@ resources:
   - ../../base
   - configmap-local.yaml
   - minio-gateway-http.yaml
+  - reference-grant.yaml
