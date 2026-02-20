@@ -5,10 +5,9 @@ metadata:
   labels:
     app: minio-gateway
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
   - port: 9090
     targetPort: 9090
-    nodePort: 30090
   selector:
     app: minio-gateway

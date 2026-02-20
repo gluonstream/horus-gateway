@@ -1,0 +1,22 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: minio-route
+  namespace: horus-namespace
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "300m"
+spec:
+  parentRefs:
+    - name: global-gateway
+      namespace: gateway-namespace
+  hostnames:
+    - s4v3.local
+    - s4v3.net
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      backendRefs:
+        - name: minio-gateway
+          port: 9090
