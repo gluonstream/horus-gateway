@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: minio-gateway-config
+data:
+  SERVER_PORT: "9090"
+  SERVER_FORWARD_HEADERS_STRATEGY: "native" # trying to avoid invalid credentials issue in k8s when using ingress from a browser
+  SPRING_MAIN_USE_RELATIVE_REDIRECTS: "true"
+  AUTH_EXTERNAL_ISSUER_URI: "http://auth.s4v3.net/realms/intwork"
+  AUTH_INTERNAL_BASE_URL: "http://keycloak.keycloak-namespace.svc.cluster.local:8080"
+  AUTH_REALM: "intwork"
+  BE_MINIO_URL: "http://be-minio.minio-namespace.svc.cluster.local:8080"
+  BE_STORAGE_URL: "http://minio.minio-namespace.svc.cluster.local:9000"
+  API_URL: "http://api.minio-namespace.svc.cluster.local:8081"
+  FE_URL: "http://execodex-fe.execodex.svc.cluster.local:80"
+  SUCCESS_REDIRECT_URL: "http://s4v3.net/" # Change this to your frontend URL
