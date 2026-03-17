@@ -57,6 +57,8 @@ auth:
     token-uri: ${AUTH_INTERNAL_TOKEN_URI:${auth.internal.base-url}/realms/${auth.internal.realm}/protocol/openid-connect/token}
     jwk-set-uri: ${AUTH_INTERNAL_JWK_SET_URI:${auth.internal.base-url}/realms/${auth.internal.realm}/protocol/openid-connect/certs}
 be:
+  blog:
+    url: ${BE_BLOG_URL:http://localhost:8082}
   minio:
     url: ${BE_MINIO_URL:http://localhost:8080}
   storage:
@@ -65,6 +67,9 @@ api:
   url: ${API_URL:http://localhost:8081}
 fe:
   url: ${FE_URL:http://localhost:5173}
+  blog:
+    url: ${FE_BLOG_URL:http://localhost:5173}
+
 success:
   redirect:
     url: ${SUCCESS_REDIRECT_URL:http://localhost:5173/}

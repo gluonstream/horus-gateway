@@ -14,3 +14,5 @@ data:
   API_URL: "http://api.minio-namespace.svc.cluster.local:8081"
   FE_URL: "http://execodex-fe.execodex.svc.cluster.local:80"
   SUCCESS_REDIRECT_URL: "http://s4v3.local/" # Change this to your frontend URL
+  BE_BLOG_URL: "http://blog-be.blog-namespace.svc.cluster.local:8082"
+  FE_BLOG_URL: "http://blog-fe.blog-namespace.svc.cluster.local:80"

@@ -50,6 +50,8 @@ public class GatewaySecConfig {
                         .pathMatchers("/", "/static/**", "/assets/**", "/*.svg", "/*.ico", "/*.png", "/*.js", "/*.css").permitAll()
                         .pathMatchers("/actuator/health/**").permitAll()
                         .pathMatchers("/greetings").permitAll()
+                        .pathMatchers("/blog/**").permitAll()
+                        .pathMatchers("/api/blog/**").permitAll()
                         .pathMatchers("/api/greetings").permitAll()
                         .pathMatchers("/api/hello").hasAnyRole("manage-account", "view-profile")
                         .anyExchange().authenticated()
