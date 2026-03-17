@@ -56,8 +56,15 @@ tasks.withType<Test> {
 tasks.named<BootBuildImage>("bootBuildImage") {
     val tag = project.findProperty("imageTag")?.toString() ?: "latest"
 
+
+    imagePlatform.set("linux/amd64")
     imageName.set("gluonstream/minio-gateway:$tag")
     tags.set(listOf("gluonstream/minio-gateway:latest"))
+    environment.set(
+        mapOf(
+            "DOCKER_DEFAULT_PLATFORM" to "linux/amd64"
+        )
+    )
 }
 
 // docker push gluonstream/minio-gateway
