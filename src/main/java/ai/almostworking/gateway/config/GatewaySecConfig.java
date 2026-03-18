@@ -49,6 +49,7 @@ public class GatewaySecConfig {
                 .authorizeExchange(exchange -> exchange
                         .pathMatchers("/", "/static/**", "/assets/**", "/*.svg", "/*.ico", "/*.png", "/*.js", "/*.css").permitAll()
                         .pathMatchers("/actuator/health/**").permitAll()
+                        .pathMatchers("/posts/**").permitAll()
                         .pathMatchers("/greetings").permitAll()
                         .pathMatchers("/blog/**").permitAll()
                         .pathMatchers("/api/blog/**").permitAll()

@@ -10,4 +10,4 @@ docker push gluonstream/minio-gateway:latest
 # kind load docker-image gluonstream/minio-gateway:latest --name blog.s4v3
 
 # Restart the deployment to pick up the new image
-kubectl rollout restart deployment/minio-gateway -n horus-namespace
+kubectl rollout restart deployment.apps/minio-gateway -n horus-namespace
