@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
@@ -19,6 +20,7 @@ import org.springframework.security.oauth2.jwt.ReactiveJwtDecoder;
 import org.springframework.security.oauth2.server.resource.authentication.ReactiveJwtAuthenticationConverter;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 import org.springframework.security.web.server.authentication.RedirectServerAuthenticationSuccessHandler;
+import org.springframework.security.web.server.authentication.ServerAuthenticationSuccessHandler;
 import org.springframework.security.web.server.authentication.logout.DelegatingServerLogoutHandler;
 import org.springframework.security.web.server.authentication.logout.SecurityContextServerLogoutHandler;
 import org.springframework.security.web.server.authentication.logout.WebSessionServerLogoutHandler;
@@ -28,6 +30,7 @@ import org.springframework.web.server.session.WebSessionIdResolver;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -42,6 +45,9 @@ public class GatewaySecConfig {
     @Value("${success.redirect.url:http://localhost:5173/}")
     private String successRedirectUrl;
 
+    @Value("${success.redirect.blog-url:http://blog.localhost:5173/}")
+    private String successBlogRedirectUrl;
+
     @Bean
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
         return http
@@ -49,9 +55,9 @@ public class GatewaySecConfig {
                 .authorizeExchange(exchange -> exchange
                         .pathMatchers("/", "/static/**", "/assets/**", "/*.svg", "/*.ico", "/*.png", "/*.js", "/*.css").permitAll()
                         .pathMatchers("/actuator/health/**").permitAll()
-                        .pathMatchers("/posts/**").permitAll()
+                        .pathMatchers("/posts/**").permitAll()  // to be removed
                         .pathMatchers("/greetings").permitAll()
-                        .pathMatchers("/blog/**").permitAll()
+                        .pathMatchers("/blog/**").permitAll() // to be removed
                         .pathMatchers("/api/blog/**").permitAll()
                         .pathMatchers("/api/greetings").permitAll()
                         .pathMatchers("/api/hello").hasAnyRole("manage-account", "view-profile")
@@ -60,7 +66,8 @@ public class GatewaySecConfig {
 //                .oauth2Login(Customizer.withDefaults())
                 .oauth2Login(oauth2 -> oauth2
                         .authenticationSuccessHandler(
-                                new RedirectServerAuthenticationSuccessHandler(successRedirectUrl)
+                                hostBasedSuccessHandler()
+//                                new RedirectServerAuthenticationSuccessHandler(successRedirectUrl)
                         )
                 )
                 .csrf(ServerHttpSecurity.CsrfSpec::disable)
@@ -72,6 +79,25 @@ public class GatewaySecConfig {
                 )
 //                .csrf(csrf -> csrf.disable())
                 .build();
+    }
+
+    private ServerAuthenticationSuccessHandler hostBasedSuccessHandler() {
+        return (webFilterExchange, authentication) -> {
+            var exchange = webFilterExchange.getExchange();
+            String host = exchange.getRequest().getURI().getHost();
+
+            // Determine the target URL based on the host
+            String targetUrl = successRedirectUrl;
+            if (host != null && (host.contains("blog.s4v3.net") || host.contains("blog.s4v3.local"))) {
+                targetUrl = successBlogRedirectUrl;
+            }
+
+            // Perform the redirect
+            var response = exchange.getResponse();
+            response.setStatusCode(HttpStatus.FOUND);
+            response.getHeaders().setLocation(URI.create(targetUrl));
+            return response.setComplete();
+        };
     }
 
     @Bean

@@ -16,3 +16,4 @@ data:
   SUCCESS_REDIRECT_URL: "https://s4v3.net/" # Change this to your frontend URL
   BE_BLOG_URL: "http://blog-be.blog-namespace.svc.cluster.local:8082"
   FE_BLOG_URL: "http://blog-fe.blog-namespace.svc.cluster.local:80"
+  SUCCESS_BLOG_REDIRECT_URL: "https://blog.s4v3.net/" # Change this to your frontend URL
