@@ -73,4 +73,4 @@ fe:
 success:
   redirect:
     url: ${SUCCESS_REDIRECT_URL:http://localhost:5173/}
-    blog-url: ${SUCCESS_BLOG_REDIRECT_URL:http://blog.localhost:5173/}
+    blog-url: ${SUCCESS_BLOG_REDIRECT_URL:http://localhost:5173/}

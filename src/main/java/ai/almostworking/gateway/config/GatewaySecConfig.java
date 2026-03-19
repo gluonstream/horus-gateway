@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.core.GrantedAuthority;
@@ -19,10 +18,10 @@ import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.security.oauth2.jwt.ReactiveJwtDecoder;
 import org.springframework.security.oauth2.server.resource.authentication.ReactiveJwtAuthenticationConverter;
 import org.springframework.security.web.server.SecurityWebFilterChain;
-import org.springframework.security.web.server.authentication.RedirectServerAuthenticationSuccessHandler;
 import org.springframework.security.web.server.authentication.ServerAuthenticationSuccessHandler;
 import org.springframework.security.web.server.authentication.logout.DelegatingServerLogoutHandler;
 import org.springframework.security.web.server.authentication.logout.SecurityContextServerLogoutHandler;
+import org.springframework.security.web.server.authentication.logout.ServerLogoutSuccessHandler;
 import org.springframework.security.web.server.authentication.logout.WebSessionServerLogoutHandler;
 import org.springframework.security.web.server.context.WebSessionServerSecurityContextRepository;
 import org.springframework.web.server.session.CookieWebSessionIdResolver;
@@ -45,7 +44,7 @@ public class GatewaySecConfig {
     @Value("${success.redirect.url:http://localhost:5173/}")
     private String successRedirectUrl;
 
-    @Value("${success.redirect.blog-url:http://blog.localhost:5173/}")
+    @Value("${success.redirect.blog-url:http://localhost:5173/}")
     private String successBlogRedirectUrl;
 
     @Bean
@@ -65,10 +64,10 @@ public class GatewaySecConfig {
                 )
 //                .oauth2Login(Customizer.withDefaults())
                 .oauth2Login(oauth2 -> oauth2
-                        .authenticationSuccessHandler(
-                                hostBasedSuccessHandler()
+                                .authenticationSuccessHandler(
+                                        hostBasedSuccessHandler()
 //                                new RedirectServerAuthenticationSuccessHandler(successRedirectUrl)
-                        )
+                                )
                 )
                 .csrf(ServerHttpSecurity.CsrfSpec::disable)
                 .logout(logout -> logout
@@ -76,8 +75,8 @@ public class GatewaySecConfig {
                                 new WebSessionServerLogoutHandler(),
                                 new SecurityContextServerLogoutHandler()
                         ))
+                        .logoutSuccessHandler(hostBasedLogoutSuccessHandler())
                 )
-//                .csrf(csrf -> csrf.disable())
                 .build();
     }
 
@@ -88,11 +87,28 @@ public class GatewaySecConfig {
 
             // Determine the target URL based on the host
             String targetUrl = successRedirectUrl;
-            if (host != null && (host.contains("blog.s4v3.net") || host.contains("blog.s4v3.local"))) {
+            if (host != null && (host.contains("blog") )) {
                 targetUrl = successBlogRedirectUrl;
             }
 
             // Perform the redirect
+            var response = exchange.getResponse();
+            response.setStatusCode(HttpStatus.FOUND);
+            response.getHeaders().setLocation(URI.create(targetUrl));
+            return response.setComplete();
+        };
+    }
+
+    private ServerLogoutSuccessHandler hostBasedLogoutSuccessHandler() {
+        return (webFilterExchange, authentication) -> {
+            var exchange = webFilterExchange.getExchange();
+            String host = exchange.getRequest().getURI().getHost();
+
+            String targetUrl = successRedirectUrl;
+            if (host != null && (host.contains("blog") || (host.contains("localhost")))) {
+                targetUrl = successBlogRedirectUrl;
+            }
+
             var response = exchange.getResponse();
             response.setStatusCode(HttpStatus.FOUND);
             response.getHeaders().setLocation(URI.create(targetUrl));
