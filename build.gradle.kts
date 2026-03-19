@@ -39,7 +39,6 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")
-//    runtimeOnly("org.springframework.boot:spring-boot-docker-compose")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
@@ -55,8 +54,6 @@ tasks.withType<Test> {
 
 tasks.named<BootBuildImage>("bootBuildImage") {
     val tag = project.findProperty("imageTag")?.toString() ?: "latest"
-
-
     imagePlatform.set("linux/amd64")
     imageName.set("gluonstream/minio-gateway:$tag")
     tags.set(listOf("gluonstream/minio-gateway:latest"))
