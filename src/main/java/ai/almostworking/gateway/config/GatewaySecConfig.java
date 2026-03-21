@@ -53,11 +53,12 @@ public class GatewaySecConfig {
                 .securityContextRepository(new WebSessionServerSecurityContextRepository())
                 .authorizeExchange(exchange -> exchange
                         .pathMatchers("/", "/static/**", "/assets/**", "/*.svg", "/*.ico", "/*.png", "/*.js", "/*.css").permitAll()
+                        .pathMatchers("/terms","/privacy").permitAll()
                         .pathMatchers("/actuator/health/**").permitAll()
                         .pathMatchers("/posts/**").permitAll()  // to be removed
                         .pathMatchers("/greetings").permitAll()
                         .pathMatchers("/blog/**").permitAll() // to be removed
-                        .pathMatchers("/api/blog/**").permitAll()
+                        .pathMatchers("/api/blog/**", "/api/counter").permitAll()
                         .pathMatchers("/api/greetings").permitAll()
                         .pathMatchers("/api/hello").hasAnyRole("manage-account", "view-profile")
                         .anyExchange().authenticated()

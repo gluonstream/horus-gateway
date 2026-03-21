@@ -11,3 +11,4 @@ docker push gluonstream/minio-gateway:latest
 
 # Restart the deployment to pick up the new image
 kubectl rollout restart deployment.apps/minio-gateway -n horus-namespace
+kubectl get all -n horus-namespace

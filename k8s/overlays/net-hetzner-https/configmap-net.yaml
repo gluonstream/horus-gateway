@@ -17,3 +17,6 @@ data:
   SUCCESS_BLOG_REDIRECT_URL: "https://blog.s4v3.net/"
   BE_BLOG_URL: "http://blog-be.blog-namespace.svc.cluster.local:8082"
   FE_BLOG_URL: "http://blog-fe.blog-namespace.svc.cluster.local:80"
+  REDIS_HOST: "redis"
+  REDIS_PORT: "6379"
+  REDIS_PASSWORD: ""

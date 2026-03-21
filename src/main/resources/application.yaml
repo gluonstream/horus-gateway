@@ -9,6 +9,11 @@ server:
 spring:
   application:
     name: gateway
+  data:
+    redis:
+        host: ${REDIS_HOST:localhost}
+        port: ${REDIS_PORT:6379}
+        password: ${REDIS_PASSWORD:}
   http:
     codecs:
       max-in-memory-size: 1024MB
@@ -47,6 +52,7 @@ spring:
       resourceserver:
         jwt:
           jwk-set-uri: ${auth.internal.jwk-set-uri}
+
 auth:
   external:
     issuer-uri: ${AUTH_EXTERNAL_ISSUER_URI:${KEYCLOAK_ISSUER_URI:http://localhost:8002/realms/intwork}}

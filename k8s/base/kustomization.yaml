@@ -8,8 +8,5 @@ resources:
   - deployment.yaml
   - service.yaml
   - secrets.yaml
-
-labels:
-  - includeSelectors: true
-    pairs:
-      app: minio-gateway
+  - redis-deployment.yaml
+  - redis-service.yaml
